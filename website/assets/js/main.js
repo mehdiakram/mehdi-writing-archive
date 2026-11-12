@@ -29,7 +29,67 @@
     themeToggleBtn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
   }
 
-  // 2. Global Archive Helpers
+  // 2. Responsive Mobile Navigation Menu
+  const headerContainer = document.querySelector('.header-container');
+  const siteNav = document.querySelector('.site-nav');
+
+  if (headerContainer && siteNav) {
+    if (!siteNav.id) {
+      siteNav.id = 'site-nav';
+    }
+
+    let menuToggleBtn = document.getElementById('mobile-menu-toggle');
+    if (!menuToggleBtn) {
+      menuToggleBtn = document.createElement('button');
+      menuToggleBtn.type = 'button';
+      menuToggleBtn.id = 'mobile-menu-toggle';
+      menuToggleBtn.className = 'mobile-menu-toggle';
+      menuToggleBtn.setAttribute('aria-label', 'Toggle navigation menu');
+      menuToggleBtn.setAttribute('aria-expanded', 'false');
+      menuToggleBtn.setAttribute('aria-controls', siteNav.id);
+      menuToggleBtn.innerHTML =
+        '<span class="hamburger-bar"></span>' +
+        '<span class="hamburger-bar"></span>' +
+        '<span class="hamburger-bar"></span>';
+      headerContainer.insertBefore(menuToggleBtn, siteNav);
+    }
+
+    const setMenuOpen = (isOpen) => {
+      siteNav.classList.toggle('is-open', isOpen);
+      menuToggleBtn.setAttribute('aria-expanded', String(isOpen));
+    };
+
+    menuToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isCurrentlyOpen = siteNav.classList.contains('is-open');
+      setMenuOpen(!isCurrentlyOpen);
+    });
+
+    siteNav.querySelectorAll('.nav-link').forEach((link) => {
+      link.addEventListener('click', () => setMenuOpen(false));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (siteNav.classList.contains('is-open') && !headerContainer.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && siteNav.classList.contains('is-open')) {
+        setMenuOpen(false);
+        menuToggleBtn.focus();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && siteNav.classList.contains('is-open')) {
+        setMenuOpen(false);
+      }
+    });
+  }
+
+  // 3. Global Archive Helpers
   window.ArchiveUtils = {
     formatDate: function (dateStr) {
       if (!dateStr) return '';
