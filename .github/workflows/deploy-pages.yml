@@ -57,7 +57,7 @@ jobs:
           python -c "
           import os
           pages = ['index.html','archive.html','article.html','author.html','categories.html','search.html','tags.html','about.html']
-          tpl = '<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><title>Redirecting... | Mehdi\'s Digital Legacy</title><script>window.location.replace(\"../{p}\" + window.location.search + window.location.hash);</script><meta http-equiv=\"refresh\" content=\"0; url=../{p}\"></head><body><p>Redirecting to <a href=\"../{p}\">{p}</a>...</p></body></html>\n'
+          tpl = '<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><title>Redirecting... | Mehdi\'s Digital Legacy</title><script>(function(){{var k=\"redir_{p}\",prev=Number(sessionStorage.getItem(k)||0),now=Date.now();sessionStorage.setItem(k,String(now));var q=window.location.search;if(now-prev<5000){{q=q?(q+\"&_fresh=\"+now):(\"?_fresh=\"+now);}}window.location.replace(\"../{p}\"+q+window.location.hash);}})();</script><noscript><meta http-equiv=\"refresh\" content=\"0; url=../{p}\"></noscript></head><body><p>Redirecting to <a href=\"../{p}\">{p}</a>...</p></body></html>\n'
           for p in pages:
               open(os.path.join('_site/website', p), 'w', encoding='utf-8').write(tpl.format(p=p))
           "

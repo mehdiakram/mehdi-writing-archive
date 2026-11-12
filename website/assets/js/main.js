@@ -5,6 +5,13 @@
 (function () {
   'use strict';
 
+  // 0. Strip temporary cache-buster query param after legacy redirect recovery
+  if (window.location.search.includes('_fresh=')) {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('_fresh');
+    window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+  }
+
   // 1. Theme Management
   const themeToggleBtn = document.getElementById('theme-toggle');
   const savedTheme = localStorage.getItem('mehdi_archive_theme') || 
