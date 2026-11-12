@@ -39,7 +39,6 @@ def generate_sitemap(articles: list, base_url: str) -> None:
         "/search.html",
         "/categories.html",
         "/tags.html",
-        "/author.html",
         "/about.html",
     ]
 
