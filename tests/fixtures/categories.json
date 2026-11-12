@@ -1,0 +1,29 @@
+[
+  {
+    "id": 505,
+    "count": 1,
+    "description": "Business articles",
+    "link": "https://www.royaltechbd.com/category/business/",
+    "name": "Business",
+    "slug": "business",
+    "parent": 0
+  },
+  {
+    "id": 4027,
+    "count": 5,
+    "description": "কৃত্রিম বুদ্ধিমত্তা ও প্রযুক্তি",
+    "link": "https://www.shamokaldarpon.com/category/ai",
+    "name": "AI",
+    "slug": "ai",
+    "parent": 0
+  },
+  {
+    "id": 3969,
+    "count": 4,
+    "description": "অটোমেশন সংক্রান্ত টিউটোরিয়াল",
+    "link": "https://www.shamokaldarpon.com/category/automation",
+    "name": "অটোমেশন",
+    "slug": "automation",
+    "parent": 0
+  }
+]

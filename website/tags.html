@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tags Cloud | Mehdi's Digital Legacy</title>
+  <meta name="description" content="Explore articles by tag in Mehdi's Digital Legacy archive.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-title">Mehdi's Digital Legacy</span>
+        <span class="brand-tagline">Personal Writing Archive</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="archive.html" class="nav-link">Archive</a>
+        <a href="search.html" class="nav-link">Search</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="author.html" class="nav-link">Author</a>
+        <a href="downloads.html" class="nav-link">Downloads</a>
+        <a href="about.html" class="nav-link">About</a>
+        <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    <div class="section-header">
+      <h1 class="section-title">Tags & Keywords</h1>
+      <span id="tags-count" style="font-size: 0.9rem; color: var(--text-muted);">Loading tags...</span>
+    </div>
+
+    <!-- Tags Cloud -->
+    <div id="tags-cloud" style="background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 30px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+      <p style="color: var(--text-muted);">Loading tags cloud...</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Mehdi's Digital Legacy — Comprehensive Tag Index.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const container = document.getElementById('tags-cloud');
+      const countElem = document.getElementById('tags-count');
+
+      try {
+        const resp = await fetch('../exports/tags.json');
+        let tags = [];
+        if (resp.ok) {
+          tags = await resp.json();
+        } else {
+          // Fallback from summary
+          const sResp = await fetch('data/articles-summary.json');
+          if (sResp.ok) {
+            const articles = await sResp.json();
+            const tagMap = {};
+            articles.forEach(a => {
+              (a.tags || []).forEach(t => {
+                tagMap[t] = (tagMap[t] || 0) + 1;
+              });
+            });
+            tags = Object.keys(tagMap).map(k => ({ name: k, count: tagMap[k] }));
+          }
+        }
+
+        if (tags.length === 0) {
+          container.innerHTML = '<p style="color: var(--text-muted);">No tags recorded yet.</p>';
+          return;
+        }
+
+        countElem.textContent = `${tags.length} unique tags`;
+
+        // Render tag cloud with subtle scaling
+        const maxCount = Math.max(...tags.map(t => t.count || 1), 1);
+        const html = tags.slice(0, 150).map(t => {
+          const count = t.count || 1;
+          const scale = 0.85 + Math.min((count / maxCount) * 0.7, 0.6);
+          return `
+            <a href="search.html?q=${encodeURIComponent(t.name)}" class="tag-pill" style="font-size: ${scale.toFixed(2)}rem; padding: 4px 10px; margin: 3px;">
+              ${window.ArchiveUtils.escapeHtml(t.name)} ${count > 1 ? `<span style="opacity: 0.6; font-size: 0.75em;">(${count})</span>` : ''}
+            </a>
+          `;
+        }).join('');
+
+        container.innerHTML = html;
+      } catch (err) {
+        container.innerHTML = '<p style="color: var(--text-muted);">Tags will appear once the archive is built.</p>';
+      }
+    });
+  </script>
+</body>
+</html>

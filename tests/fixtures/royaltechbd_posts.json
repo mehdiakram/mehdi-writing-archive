@@ -1,0 +1,50 @@
+[
+  {
+    "id": 4600,
+    "date": "2026-11-08T12:31:26",
+    "date_gmt": "2026-11-08T06:31:26",
+    "modified": "2026-11-08T12:31:26",
+    "modified_gmt": "2026-11-08T06:31:26",
+    "slug": "social-media-manager",
+    "status": "publish",
+    "type": "post",
+    "link": "https://www.royaltechbd.com/social-media-manager/",
+    "title": {
+      "rendered": "Social Media Manager – Your All-in-One Social Media Marketing Solution"
+    },
+    "content": {
+      "rendered": "<p>Social Media Manager simplifies marketing automation, scheduling, and community engagement for modern businesses.</p><h2>Key Features</h2><ul><li>Multi-platform publishing</li><li>Automated reporting</li><li>Analytics dashboard</li></ul>"
+    },
+    "excerpt": {
+      "rendered": "<p>Social Media Manager simplifies marketing automation...</p>"
+    },
+    "author": 2,
+    "featured_media": 0,
+    "categories": [505],
+    "tags": [515]
+  },
+  {
+    "id": 4580,
+    "date": "2026-10-15T10:00:00",
+    "date_gmt": "2026-10-15T04:00:00",
+    "modified": "2026-10-15T10:00:00",
+    "modified_gmt": "2026-10-15T04:00:00",
+    "slug": "high-performance-hosting",
+    "status": "publish",
+    "type": "post",
+    "link": "https://www.royaltechbd.com/high-performance-hosting/",
+    "title": {
+      "rendered": "High Performance Cloud Hosting for Modern Web Applications"
+    },
+    "content": {
+      "rendered": "<p>Choosing the right cloud hosting architecture is essential for zero downtime and low latency.</p>"
+    },
+    "excerpt": {
+      "rendered": "<p>Choosing the right cloud hosting architecture...</p>"
+    },
+    "author": 2,
+    "featured_media": 0,
+    "categories": [505],
+    "tags": []
+  }
+]

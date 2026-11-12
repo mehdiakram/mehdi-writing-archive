@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mehdi's Digital Legacy | Personal Writing Archive & Digital Preservation Platform</title>
+  <meta name="description" content="A Lifetime of Thoughts, Knowledge and Experiences, Preserved for Generations. Permanent digital archive for Mehdi Akram's writings from Royal Technologies and সমকাল দর্পণ.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="canonical" href="https://mehdiakram.github.io/mehdi-writing-archive/">
+  <meta property="og:title" content="Mehdi's Digital Legacy">
+  <meta property="og:description" content="A Lifetime of Thoughts, Knowledge and Experiences, Preserved for Generations.">
+  <meta property="og:type" content="website">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-title">Mehdi's Digital Legacy</span>
+        <span class="brand-tagline">Personal Writing Archive</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="archive.html" class="nav-link">Archive</a>
+        <a href="search.html" class="nav-link">Search</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="author.html" class="nav-link">Author</a>
+        <a href="downloads.html" class="nav-link">Downloads</a>
+        <a href="about.html" class="nav-link">About</a>
+        <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-container">
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <h1 class="hero-title">Mehdi's Digital Legacy</h1>
+      <p class="hero-subtitle">"A Lifetime of Thoughts, Knowledge and Experiences, Preserved for Generations."</p>
+      
+      <!-- Quick Search Bar -->
+      <form action="search.html" method="GET" class="search-box-wrapper" style="max-width: 620px; margin: 0 auto;">
+        <input type="text" name="q" class="search-input" placeholder="Search across all English & Bengali articles..." aria-label="Search articles">
+      </form>
+
+      <!-- Archive Stats -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" id="stat-total-articles">1,272</span>
+          <span class="stat-label">Articles Preserved</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="stat-sources">2</span>
+          <span class="stat-label">Publications</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="stat-categories">37</span>
+          <span class="stat-label">Topics & Categories</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Serverless & Open</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Source Publication Cards -->
+    <div class="section-header">
+      <h2 class="section-title">Preserved Publications</h2>
+      <a href="archive.html" style="font-size: 0.9rem;">View All Archives →</a>
+    </div>
+
+    <div class="source-cards-grid">
+      <!-- Royal Technologies Card -->
+      <div class="source-card">
+        <div class="source-card-header">
+          <span class="source-badge badge-royal">Source 1</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">English / Tech</span>
+        </div>
+        <h3 class="source-card-title">Royal Technologies</h3>
+        <p class="source-card-desc">
+          Technical articles, hosting infrastructure, Linux administration, domain systems, web engineering, and enterprise digital solutions.
+        </p>
+        <div class="source-card-footer">
+          <a href="search.html?source=royaltechbd">Explore RoyalTech Archive →</a>
+          <a href="https://www.royaltechbd.com" target="_blank" rel="noopener">Original Site ↗</a>
+        </div>
+      </div>
+
+      <!-- Shamokal Darpon Card -->
+      <div class="source-card">
+        <div class="source-card-header">
+          <span class="source-badge badge-shamokal">Source 2</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">বাংলা (Bengali)</span>
+        </div>
+        <h3 class="source-card-title">সমকাল দর্পণ (Shamokal Darpon)</h3>
+        <p class="source-card-desc">
+          এস এম মেহেদী আকরাম এর ব্যক্তিগত ব্লগ। মুক্ত সফটওয়্যার, অটোমেশন, ডিজিটাল প্রযুক্তি, সামাজিক রূপরেখা এবং জ্ঞান সংরক্ষণ।
+        </p>
+        <div class="source-card-footer">
+          <a href="search.html?source=shamokaldarpon">সমকাল দর্পণ আর্কাইভ দেখুন →</a>
+          <a href="https://www.shamokaldarpon.com" target="_blank" rel="noopener">মূল সাইট ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Articles Section -->
+    <div class="section-header">
+      <h2 class="section-title">Recent Published Writings</h2>
+      <a href="archive.html" style="font-size: 0.9rem;">Chronological Timeline →</a>
+    </div>
+
+    <div id="recent-articles-container">
+      <p style="color: var(--text-muted); text-align: center; padding: 20px;">Loading preserved writings...</p>
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="archive.html">Timeline</a>
+      <a href="categories.html">Categories</a>
+      <a href="tags.html">Tags</a>
+      <a href="author.html">Author Profile</a>
+      <a href="downloads.html">Offline Downloads</a>
+      <a href="about.html">About Digital Legacy</a>
+    </nav>
+    <div class="footer-meta">
+      <p><strong>Mehdi's Digital Legacy</strong> — Preserved by S M Mehdi Akram (এস এম মেহেদী আকরাম).</p>
+      <p style="margin-top: 4px; font-size: 0.8rem;">
+        Operates without a permanent PHP or MySQL server. Entirely preserved in SQLite 3, Markdown, and static HTML.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Load recent articles dynamically from articles-summary.json
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const resp = await fetch('data/articles-summary.json');
+        if (!resp.ok) throw new Error('Data not available');
+        const articles = await resp.json();
+        
+        // Update stats
+        const statElem = document.getElementById('stat-total-articles');
+        if (statElem && articles.length > 0) {
+          statElem.textContent = articles.length.toLocaleString();
+        }
+
+        // Render first 8 recent articles
+        const container = document.getElementById('recent-articles-container');
+        if (container) {
+          const recent = articles.slice(0, 8);
+          container.innerHTML = `
+            <div class="articles-list">
+              ${recent.map(a => window.ArchiveUtils.renderArticleCard(a)).join('')}
+            </div>
+          `;
+        }
+      } catch (err) {
+        console.log('Summary data will populate upon first sync/build.');
+      }
+    });
+  </script>
+</body>
+</html>

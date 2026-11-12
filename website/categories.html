@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories & Topics | Mehdi's Digital Legacy</title>
+  <meta name="description" content="Browse articles by category and subject matter in Mehdi's Digital Legacy archive.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-title">Mehdi's Digital Legacy</span>
+        <span class="brand-tagline">Personal Writing Archive</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="archive.html" class="nav-link">Archive</a>
+        <a href="search.html" class="nav-link">Search</a>
+        <a href="categories.html" class="nav-link active">Categories</a>
+        <a href="author.html" class="nav-link">Author</a>
+        <a href="downloads.html" class="nav-link">Downloads</a>
+        <a href="about.html" class="nav-link">About</a>
+        <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    <div class="section-header">
+      <h1 class="section-title">Categories & Subject Matter</h1>
+      <a href="tags.html" style="font-size: 0.9rem;">View All Tags →</a>
+    </div>
+
+    <div id="categories-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;">
+      <p style="color: var(--text-muted); padding: 40px;">Loading categories...</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Mehdi's Digital Legacy — Structured Subject Categorization.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const container = document.getElementById('categories-container');
+      try {
+        const resp = await fetch('../exports/categories.json');
+        let categories = [];
+        if (resp.ok) {
+          categories = await resp.json();
+        } else {
+          // Fallback from summary
+          const sResp = await fetch('data/articles-summary.json');
+          if (sResp.ok) {
+            const articles = await sResp.json();
+            const catMap = {};
+            articles.forEach(a => {
+              (a.categories || []).forEach(c => {
+                catMap[c] = (catMap[c] || 0) + 1;
+              });
+            });
+            categories = Object.keys(catMap).map(k => ({ name: k, count: catMap[k], source: 'all' }));
+          }
+        }
+
+        if (categories.length === 0) {
+          container.innerHTML = '<p style="color: var(--text-muted);">No categories recorded yet.</p>';
+          return;
+        }
+
+        // Split into Royal Tech and Shamokal Darpon
+        const royalCats = categories.filter(c => c.source === 'royaltechbd');
+        const shamokalCats = categories.filter(c => c.source === 'shamokaldarpon');
+        const otherCats = categories.filter(c => c.source !== 'royaltechbd' && c.source !== 'shamokaldarpon');
+
+        function renderSection(title, badgeClass, list) {
+          if (!list || list.length === 0) return '';
+          const items = list.map(c => `
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-color);">
+              <a href="search.html?q=${encodeURIComponent(c.name)}" style="color: var(--text-primary); font-weight: 500;">
+                ${window.ArchiveUtils.escapeHtml(c.name)}
+              </a>
+              <span class="tag-pill">${c.count || 0}</span>
+            </li>
+          `).join('');
+
+          return `
+            <div style="background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px;">
+              <h2 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 15px;">
+                <span class="source-badge ${badgeClass}" style="margin-right: 8px;">${title}</span>
+              </h2>
+              <ul style="list-style: none; padding: 0;">
+                ${items}
+              </ul>
+            </div>
+          `;
+        }
+
+        let html = '';
+        if (royalCats.length > 0) html += renderSection('Royal Technologies', 'badge-royal', royalCats);
+        if (shamokalCats.length > 0) html += renderSection('সমকাল দর্পণ', 'badge-shamokal', shamokalCats);
+        if (otherCats.length > 0) html += renderSection('Topics', 'badge-royal', otherCats);
+
+        container.innerHTML = html;
+
+      } catch (err) {
+        container.innerHTML = '<p style="color: var(--text-muted);">Categories will appear once the archive is built.</p>';
+      }
+    });
+  </script>
+</body>
+</html>

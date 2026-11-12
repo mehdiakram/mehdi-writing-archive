@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mehdi-writing-archive"
+version = "1.0.0"
+description = "Mehdi's Digital Legacy - Personal Writing Archive & Digital Preservation Platform"
+authors = [
+    { name = "Mehdi Akram", email = "mehdi@shamokaldarpon.com" }
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+    "markdown>=3.6",
+    "markdownify>=0.12.0",
+    "Pillow>=10.0.0",
+    "python-dateutil>=2.9.0",
+    "pyyaml>=6.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+pythonpath = ["."]
+addopts = "-v --tb=short"

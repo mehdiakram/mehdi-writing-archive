@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline Downloads & Data | Mehdi's Digital Legacy</title>
+  <meta name="description" content="Download the complete SQLite database, JSON exports, and Markdown files for offline reading.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-title">Mehdi's Digital Legacy</span>
+        <span class="brand-tagline">Personal Writing Archive</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="archive.html" class="nav-link">Archive</a>
+        <a href="search.html" class="nav-link">Search</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="author.html" class="nav-link">Author</a>
+        <a href="downloads.html" class="nav-link active">Downloads</a>
+        <a href="about.html" class="nav-link">About</a>
+        <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container content-narrow">
+    <div class="section-header">
+      <h1 class="section-title">Bulk Downloads & Archival Data</h1>
+    </div>
+
+    <p style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 30px;">
+      In accordance with open preservation standards, the entire archive is freely downloadable in portable, standardized formats for offline reading, academic analysis, or permanent backup storage.
+    </p>
+
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <!-- Download SQLite -->
+      <div class="source-card">
+        <div class="source-card-header">
+          <span class="source-badge badge-royal">Relational Database</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">SQLite 3 with FTS5</span>
+        </div>
+        <h3 class="source-card-title">archive.sqlite</h3>
+        <p class="source-card-desc">
+          Complete normalized SQLite 3 database containing all articles, revisions, categories, tags, media metadata, and full-text search virtual tables.
+        </p>
+        <div class="source-card-footer">
+          <a href="../database/archive.sqlite" class="btn btn-primary" download>Download archive.sqlite (Direct)</a>
+          <a href="https://sqlitebrowser.org/" target="_blank" rel="noopener">Get DB Browser for SQLite ↗</a>
+        </div>
+      </div>
+
+      <!-- Download JSON Exports -->
+      <div class="source-card">
+        <div class="source-card-header">
+          <span class="source-badge badge-shamokal">Machine-Readable JSON</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Deterministic UTF-8</span>
+        </div>
+        <h3 class="source-card-title">JSON Export Collection</h3>
+        <p class="source-card-desc">
+          Structured JSON exports suitable for data processing, Python scripting, and machine ingestion:
+          <code>articles.json</code>, <code>categories.json</code>, <code>tags.json</code>, and <code>manifest.json</code>.
+        </p>
+        <div class="source-card-footer" style="flex-wrap: wrap; gap: 10px;">
+          <a href="../exports/articles.json" class="btn" download>articles.json</a>
+          <a href="../exports/categories.json" class="btn" download>categories.json</a>
+          <a href="../exports/tags.json" class="btn" download>tags.json</a>
+          <a href="../exports/manifest.json" class="btn" download>manifest.json</a>
+        </div>
+      </div>
+
+      <!-- Full Git Clone -->
+      <div class="source-card">
+        <div class="source-card-header">
+          <span class="source-badge" style="background-color: rgba(146, 64, 14, 0.1); color: var(--accent);">Full Git Mirror</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Git / GitHub</span>
+        </div>
+        <h3 class="source-card-title">Raw Markdown & Git Repository</h3>
+        <p class="source-card-desc">
+          Clone the full Git repository containing every single Markdown article file, media images, migration scripts, and automation workflows.
+        </p>
+        <div class="source-card-footer">
+          <code style="padding: 6px 12px; background-color: var(--bg-subtle); border-radius: 4px; font-size: 0.85rem;">git clone https://github.com/mehdiakram/mehdi-writing-archive.git</code>
+          <a href="https://github.com/mehdiakram/mehdi-writing-archive" target="_blank" rel="noopener" class="btn">View on GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Mehdi's Digital Legacy — Preserving Knowledge for Generations.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

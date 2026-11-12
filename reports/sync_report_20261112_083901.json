@@ -1,0 +1,16 @@
+[
+  {
+    "source_key": "royaltechbd",
+    "source_name": "Royal Technologies",
+    "mode": "full",
+    "status": "success",
+    "posts_created": 0,
+    "posts_updated": 40,
+    "posts_unchanged": 122,
+    "media_downloaded": 70,
+    "errors_count": 0,
+    "error_details": [],
+    "started_at": "2026-11-12T08:38:52.108881+00:00",
+    "finished_at": "2026-11-12T08:38:59.805046+00:00"
+  }
+]

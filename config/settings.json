@@ -1,0 +1,30 @@
+{
+  "archive_name": "Mehdi's Digital Legacy",
+  "archive_tagline": "A Lifetime of Thoughts, Knowledge and Experiences, Preserved for Generations.",
+  "default_author": "Mehdi Akram",
+  "base_website_url": "https://mehdiakram.github.io/mehdi-writing-archive",
+  "sync": {
+    "overlap_hours": 48,
+    "request_timeout_seconds": 30,
+    "max_retries": 3,
+    "retry_backoff_factor": 1.5,
+    "batch_size": 50,
+    "delay_between_requests_ms": 250
+  },
+  "database": {
+    "path": "database/archive.sqlite",
+    "schema_path": "database/schema.sql",
+    "migrations_dir": "database/migrations",
+    "wal_mode": true
+  },
+  "exports": {
+    "directory": "exports",
+    "pretty_json": true
+  },
+  "articles": {
+    "base_directory": "articles"
+  },
+  "media": {
+    "base_directory": "media"
+  }
+}

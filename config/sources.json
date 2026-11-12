@@ -1,0 +1,22 @@
+{
+  "sources": [
+    {
+      "key": "royaltechbd",
+      "name": "Royal Technologies",
+      "domain": "www.royaltechbd.com",
+      "base_url": "https://www.royaltechbd.com",
+      "api_url": "https://www.royaltechbd.com/wp-json/wp/v2",
+      "default_language": "en",
+      "enabled": true
+    },
+    {
+      "key": "shamokaldarpon",
+      "name": "সমকাল দর্পণ",
+      "domain": "www.shamokaldarpon.com",
+      "base_url": "https://www.shamokaldarpon.com",
+      "api_url": "https://www.shamokaldarpon.com/wp-json/wp/v2",
+      "default_language": "bn",
+      "enabled": true
+    }
+  ]
+}

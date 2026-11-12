@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mehdiakram.github.io/mehdi-writing-archive/sitemap.xml

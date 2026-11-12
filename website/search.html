@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Archive | Mehdi's Digital Legacy</title>
+  <meta name="description" content="Search across all published articles by Mehdi Akram in Bengali and English.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-title">Mehdi's Digital Legacy</span>
+        <span class="brand-tagline">Personal Writing Archive</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="archive.html" class="nav-link">Archive</a>
+        <a href="search.html" class="nav-link active">Search</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="author.html" class="nav-link">Author</a>
+        <a href="downloads.html" class="nav-link">Downloads</a>
+        <a href="about.html" class="nav-link">About</a>
+        <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    <div class="section-header">
+      <h1 class="section-title">Full-Text Search Engine</h1>
+      <span id="results-count" style="font-size: 0.9rem; color: var(--text-muted);">Initializing index...</span>
+    </div>
+
+    <!-- Search Box -->
+    <div class="search-box-wrapper">
+      <input type="text" id="search-input" class="search-input" placeholder="Type words in Bengali (বাংলা) or English to search titles and content..." autofocus aria-label="Search articles">
+    </div>
+
+    <!-- Filters Bar -->
+    <div class="filters-bar">
+      <span style="font-size: 0.88rem; align-self: center; margin-right: 6px; color: var(--text-muted);">Source:</span>
+      <button class="filter-btn active" data-source="all">All Sources</button>
+      <button class="filter-btn" data-source="royaltechbd">Royal Technologies</button>
+      <button class="filter-btn" data-source="shamokaldarpon">সমকাল দর্পণ</button>
+
+      <span style="font-size: 0.88rem; align-self: center; margin-left: 15px; margin-right: 6px; color: var(--text-muted);">Language:</span>
+      <button class="filter-btn active" data-lang="all">All Languages</button>
+      <button class="filter-btn" data-lang="en">English</button>
+      <button class="filter-btn" data-lang="bn">বাংলা (Bengali)</button>
+    </div>
+
+    <!-- Results Container -->
+    <div id="search-results">
+      <p style="text-align: center; padding: 40px; color: var(--text-muted);">Loading search index...</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Mehdi's Digital Legacy — Fast, Private, Serverless Client-Side Search.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "report_generated_at": "2026-11-12T08:39:15.319288+00:00",
+  "archive_name": "Mehdi's Digital Legacy",
+  "archive_health": "healthy",
+  "total_articles": 1272,
+  "total_media": 164,
+  "total_categories": 37,
+  "total_tags": 4068,
+  "total_revisions": 40,
+  "articles_by_language": {
+    "bn": 1124,
+    "en": 148
+  },
+  "sources": [
+    {
+      "key": "royaltechbd",
+      "name": "Royal Technologies",
+      "domain": "www.royaltechbd.com",
+      "default_language": "en",
+      "last_sync_at": "2026-11-12T08:38:59.805046+00:00",
+      "sync_status": "success",
+      "total_synced_posts": 162,
+      "last_error": null
+    },
+    {
+      "key": "shamokaldarpon",
+      "name": "সমকাল দর্পণ",
+      "domain": "www.shamokaldarpon.com",
+      "default_language": "bn",
+      "last_sync_at": "2026-11-12T08:37:07.735840+00:00",
+      "sync_status": "success",
+      "total_synced_posts": 1110,
+      "last_error": null
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chronological Archive | Mehdi's Digital Legacy</title>
+  <meta name="description" content="Chronological timeline of all preserved writings by Mehdi Akram.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-title">Mehdi's Digital Legacy</span>
+        <span class="brand-tagline">Personal Writing Archive</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="archive.html" class="nav-link active">Archive</a>
+        <a href="search.html" class="nav-link">Search</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="author.html" class="nav-link">Author</a>
+        <a href="downloads.html" class="nav-link">Downloads</a>
+        <a href="about.html" class="nav-link">About</a>
+        <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    <div class="section-header">
+      <h1 class="section-title">Chronological Archive & Timeline</h1>
+      <span id="timeline-count" style="font-size: 0.9rem; color: var(--text-muted);">Loading...</span>
+    </div>
+
+    <!-- Filters Bar -->
+    <div class="filters-bar">
+      <span style="font-size: 0.88rem; align-self: center; margin-right: 6px; color: var(--text-muted);">Source:</span>
+      <button class="filter-btn active" data-source="all">All Sources</button>
+      <button class="filter-btn" data-source="royaltechbd">Royal Technologies</button>
+      <button class="filter-btn" data-source="shamokaldarpon">সমকাল দর্পণ</button>
+
+      <span style="font-size: 0.88rem; align-self: center; margin-left: 15px; margin-right: 6px; color: var(--text-muted);">Language:</span>
+      <button class="filter-btn active" data-lang="all">All</button>
+      <button class="filter-btn" data-lang="en">English</button>
+      <button class="filter-btn" data-lang="bn">বাংলা (Bengali)</button>
+    </div>
+
+    <!-- Timeline Container -->
+    <div id="timeline-container">
+      <p style="text-align: center; padding: 40px; color: var(--text-muted);">Loading articles timeline...</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Mehdi's Digital Legacy — Complete Chronological Preservation Timeline.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      let articles = [];
+      let activeSource = 'all';
+      let activeLang = 'all';
+
+      const container = document.getElementById('timeline-container');
+      const countElem = document.getElementById('timeline-count');
+
+      try {
+        const resp = await fetch('data/articles-summary.json');
+        if (!resp.ok) throw new Error('Data not available');
+        articles = await resp.json();
+        renderTimeline();
+      } catch (err) {
+        container.innerHTML = '<p style="text-align: center; color: var(--text-muted);">Articles will appear here once the archive is built.</p>';
+      }
+
+      function renderTimeline() {
+        let filtered = articles;
+        if (activeSource !== 'all') {
+          filtered = filtered.filter(a => a.source === activeSource);
+        }
+        if (activeLang !== 'all') {
+          filtered = filtered.filter(a => a.language === activeLang);
+        }
+
+        countElem.textContent = `${filtered.length} articles preserved`;
+
+        if (filtered.length === 0) {
+          container.innerHTML = '<p style="text-align: center; padding: 40px; color: var(--text-muted);">No articles found matching the selected filters.</p>';
+          return;
+        }
+
+        // Group by Year
+        const byYear = {};
+        filtered.forEach(art => {
+          const yr = art.year || 'Unknown';
+          if (!byYear[yr]) byYear[yr] = [];
+          byYear[yr].push(art);
+        });
+
+        const sortedYears = Object.keys(byYear).sort((a, b) => b.localeCompare(a));
+
+        const html = sortedYears.map(year => {
+          const yearArticles = byYear[year];
+          const cards = yearArticles.map(a => window.ArchiveUtils.renderArticleCard(a)).join('');
+          return `
+            <div style="margin-bottom: 40px;">
+              <h2 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--accent); margin-bottom: 16px; border-bottom: 2px solid var(--border-color); padding-bottom: 4px;">
+                ${year} <span style="font-size: 0.9rem; color: var(--text-muted); font-weight: normal;">(${yearArticles.length} ${yearArticles.length === 1 ? 'article' : 'articles'})</span>
+              </h2>
+              <div class="articles-list">
+                ${cards}
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        container.innerHTML = html;
+      }
+
+      // Filter button handlers
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const src = btn.dataset.source;
+          const lang = btn.dataset.lang;
+          if (src) {
+            activeSource = src;
+            document.querySelectorAll('[data-source]').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+          }
+          if (lang) {
+            activeLang = lang;
+            document.querySelectorAll('[data-lang]').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+          }
+          renderTimeline();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

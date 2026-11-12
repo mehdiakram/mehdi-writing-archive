@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Reader | Mehdi's Digital Legacy</title>
+  <meta name="description" content="Read preserved articles from Mehdi's Digital Legacy archive.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Minimal client-side markdown renderer for zero-backend dynamic reader -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-title">Mehdi's Digital Legacy</span>
+        <span class="brand-tagline">Personal Writing Archive</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="archive.html" class="nav-link">Archive</a>
+        <a href="search.html" class="nav-link">Search</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="author.html" class="nav-link">Author</a>
+        <a href="downloads.html" class="nav-link">Downloads</a>
+        <a href="about.html" class="nav-link">About</a>
+        <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Article Container -->
+  <main class="main-container content-narrow">
+    <div id="article-loader" style="text-align: center; padding: 60px 20px;">
+      <p style="font-size: 1.1rem; color: var(--text-muted);">Loading article from digital archive...</p>
+    </div>
+
+    <div id="article-view" style="display: none;">
+      <!-- Header Meta -->
+      <header class="article-header">
+        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px;">
+          <span id="art-source-badge" class="source-badge">Source</span>
+          <span id="art-lang-badge" style="font-size: 0.8rem; color: var(--text-muted);"></span>
+        </div>
+        <h1 id="art-title" class="article-title"></h1>
+        <div style="font-size: 0.95rem; color: var(--text-secondary);">
+          By <strong id="art-author">Mehdi Akram</strong>
+        </div>
+      </header>
+
+      <!-- Archival Metadata Box -->
+      <div class="article-meta-box">
+        <div>
+          <span class="meta-field-label">Original Publication Date</span>
+          <span id="art-pub-date" class="meta-field-val"></span>
+        </div>
+        <div>
+          <span class="meta-field-label">Archive Ingestion Date</span>
+          <span id="art-archived-date" class="meta-field-val"></span>
+        </div>
+        <div>
+          <span class="meta-field-label">Original Website</span>
+          <a id="art-orig-link" href="#" target="_blank" rel="noopener" class="meta-field-val" style="word-break: break-all;">Original Link ↗</a>
+        </div>
+        <div>
+          <span class="meta-field-label">Permanent Archive ID</span>
+          <span id="art-archive-id" class="meta-field-val font-mono"></span>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <img id="art-featured-image" class="article-featured-img" style="display: none;" alt="Featured Image">
+
+      <!-- Rendered Body Content -->
+      <div id="art-content" class="article-body"></div>
+
+      <!-- Action Buttons -->
+      <div class="article-actions">
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button onclick="window.print()" class="btn">🖨️ Print Article</button>
+          <a id="art-md-download" href="#" class="btn btn-primary" download>📥 Download Markdown (.md)</a>
+        </div>
+        <div>
+          <a href="search.html" class="btn">🔍 Search More Articles</a>
+        </div>
+      </div>
+
+      <!-- Taxonomies & Citations -->
+      <div style="margin-top: 30px; font-size: 0.9rem;">
+        <div style="margin-bottom: 12px;">
+          <strong>Categories:</strong> <span id="art-categories"></span>
+        </div>
+        <div style="margin-bottom: 25px;">
+          <strong>Tags:</strong> <span id="art-tags"></span>
+        </div>
+
+        <div style="padding: 16px; background-color: var(--bg-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 0.82rem; color: var(--text-secondary);">
+          <strong>Archival Citation:</strong><br>
+          <span id="art-citation"></span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <p>Mehdi's Digital Legacy — Preserving written knowledge for future generations.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const archiveId = window.ArchiveUtils.getQueryParam('id');
+      const loader = document.getElementById('article-loader');
+      const view = document.getElementById('article-view');
+
+      if (!archiveId) {
+        loader.innerHTML = `
+          <h3>No article selected</h3>
+          <p style="margin-top: 10px;"><a href="archive.html">Browse the complete archive timeline →</a></p>
+        `;
+        return;
+      }
+
+      try {
+        // Load articles summary or articles.json
+        let articles = [];
+        const resp = await fetch('data/articles-summary.json');
+        if (resp.ok) {
+          articles = await resp.json();
+        }
+
+        const article = articles.find(a => a.archive_id === archiveId);
+        if (!article) {
+          loader.innerHTML = `
+            <h3>Article not found</h3>
+            <p>Archive ID '${archiveId}' was not found in the current index.</p>
+            <p style="margin-top: 10px;"><a href="search.html">Search other articles →</a></p>
+          `;
+          return;
+        }
+
+        // Fetch Markdown content from markdown_path
+        const mdResp = await fetch('../' + article.markdown_path);
+        let rawMarkdown = '';
+        if (mdResp.ok) {
+          rawMarkdown = await mdResp.text();
+        } else {
+          rawMarkdown = article.excerpt || 'Article text could not be loaded from repository.';
+        }
+
+        // Strip YAML frontmatter if present
+        let bodyMarkdown = rawMarkdown;
+        if (rawMarkdown.startsWith('---')) {
+          const parts = rawMarkdown.split('---', 2);
+          if (parts.length >= 2) {
+            bodyMarkdown = rawMarkdown.substring(rawMarkdown.indexOf('---', 3) + 3).trim();
+          }
+        }
+
+        // Render fields
+        document.title = `${article.title} | Mehdi's Digital Legacy`;
+        document.getElementById('art-title').textContent = article.title;
+        document.getElementById('art-author').textContent = article.author || 'Mehdi Akram';
+        document.getElementById('art-archive-id').textContent = article.archive_id;
+        
+        const isRoyal = article.source === 'royaltechbd';
+        const badge = document.getElementById('art-source-badge');
+        badge.textContent = article.source_name;
+        badge.className = `source-badge ${isRoyal ? 'badge-royal' : 'badge-shamokal'}`;
+
+        document.getElementById('art-lang-badge').textContent = article.language === 'bn' ? 'বাংলা (Bengali)' : 'English';
+        document.getElementById('art-pub-date').textContent = window.ArchiveUtils.formatDate(article.published_at);
+        document.getElementById('art-archived-date').textContent = window.ArchiveUtils.formatDate(article.modified_at || article.published_at);
+        
+        const origLink = document.getElementById('art-orig-link');
+        origLink.href = article.original_url;
+        origLink.textContent = article.original_url;
+
+        // Featured image
+        const featImg = document.getElementById('art-featured-image');
+        if (article.featured_image) {
+          featImg.src = article.featured_image.startsWith('http') ? article.featured_image : '../' + article.featured_image;
+          featImg.style.display = 'block';
+        }
+
+        // Render Markdown body
+        const contentElem = document.getElementById('art-content');
+        if (typeof marked !== 'undefined') {
+          contentElem.innerHTML = marked.parse(bodyMarkdown);
+        } else {
+          contentElem.textContent = bodyMarkdown;
+        }
+
+        // Markdown download link
+        const dlLink = document.getElementById('art-md-download');
+        dlLink.href = '../' + article.markdown_path;
+        dlLink.setAttribute('download', `${article.slug}.md`);
+
+        // Categories & Tags
+        document.getElementById('art-categories').textContent = (article.categories || []).join(', ') || 'General';
+        document.getElementById('art-tags').textContent = (article.tags || []).join(', ') || 'None';
+
+        // Citation
+        const citation = `Akram, M. (${article.published_at ? article.published_at.substring(0, 4) : 'n.d.'}). "${article.title}". Originally published at ${article.source_name} (${article.original_url}). Preserved in Mehdi's Digital Legacy Archive (ID: ${article.archive_id}).`;
+        document.getElementById('art-citation').textContent = citation;
+
+        loader.style.display = 'none';
+        view.style.display = 'block';
+
+      } catch (err) {
+        console.error('Error rendering article:', err);
+        loader.innerHTML = `<h3>Error loading article</h3><p>${err.message}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>

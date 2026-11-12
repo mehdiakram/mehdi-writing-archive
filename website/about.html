@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About the Archive | Mehdi's Digital Legacy</title>
+  <meta name="description" content="The preservation philosophy, architecture, and principles of Mehdi's Digital Legacy.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-title">Mehdi's Digital Legacy</span>
+        <span class="brand-tagline">Personal Writing Archive</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="archive.html" class="nav-link">Archive</a>
+        <a href="search.html" class="nav-link">Search</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="author.html" class="nav-link">Author</a>
+        <a href="downloads.html" class="nav-link">Downloads</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container content-narrow">
+    <article class="article-body" style="background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 40px;">
+      <h1 class="hero-title" style="margin-bottom: 15px;">About Mehdi's Digital Legacy</h1>
+      <p style="font-size: 1.15rem; color: var(--accent); font-style: italic; margin-bottom: 30px;">
+        "A Lifetime of Thoughts, Knowledge and Experiences, Preserved for Generations."
+      </p>
+
+      <h2>1. The Problem of Digital Fragility</h2>
+      <p>
+        The modern web is built on shifting sands. When writers publish online, their work is usually tethered to dynamic databases (like MySQL), proprietary Content Management Systems (like WordPress), active monthly hosting subscriptions, and renewable domain names.
+      </p>
+      <p>
+        If an author passes away, if hosting invoices fail to renew, or if CMS code evolves into backwards-incompatibility, decades of writing can vanish overnight. This phenomenon is known as <strong>digital decay</strong>.
+      </p>
+
+      <h2>2. Radical Independence Architecture</h2>
+      <p>
+        This archive was designed under the principle of <strong>radical digital independence</strong>. It guarantees that Mehdi Akram's published writings will outlive their original hosting environments:
+      </p>
+      <ul>
+        <li><strong>Zero Permanent Server Dependencies:</strong> The public archive runs as pure static HTML/CSS/JS without PHP or SQL database servers. It can be hosted on GitHub Pages or viewed directly from an offline USB drive.</li>
+        <li><strong>Tri-Layer Data Redundancy:</strong> Content is preserved simultaneously in an ACID SQLite 3 database with FTS5 search, human-readable Markdown (.md) files, and deterministic JSON exports.</li>
+        <li><strong>Bidirectional Reconstruction:</strong> If the database is deleted, running <code>python scripts/restore.py --rebuild-database</code> reconstructs the complete database from the raw Markdown files.</li>
+        <li><strong>Multilingual Equity:</strong> Native support for the Bengali script (বাংলা) and English across search, frontmatter, and file paths.</li>
+      </ul>
+
+      <h2>3. The 3-2-1 Preservation Strategy</h2>
+      <p>
+        The archive follows the global archival 3-2-1 backup standard:
+      </p>
+      <ol>
+        <li><strong>Copy 1 (Active Production):</strong> The public, version-controlled GitHub repository.</li>
+        <li><strong>Copy 2 (Automated Cloud Backup):</strong> Weekly compressed snapshot packages created via GitHub Actions workflows.</li>
+        <li><strong>Copy 3 (Cold Physical Storage):</strong> Offline storage on an external hard drive or optical media, updated via <code>python scripts/backup.py</code>.</li>
+      </ol>
+
+      <h2>4. Documentation & Recovery Manuals</h2>
+      <p>
+        Complete recovery manuals for non-programmers and archivists are available in both languages:
+      </p>
+      <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+        <a href="https://github.com/mehdiakram/mehdi-writing-archive/blob/main/DIGITAL-LEGACY.md" target="_blank" class="btn btn-primary">English Manual (DIGITAL-LEGACY.md) ↗</a>
+        <a href="https://github.com/mehdiakram/mehdi-writing-archive/blob/main/DIGITAL-LEGACY-BN.md" target="_blank" class="btn btn-primary">বাংলা গাইড (DIGITAL-LEGACY-BN.md) ↗</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Mehdi's Digital Legacy — Built for Long-Term Digital Preservation.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
