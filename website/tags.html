@@ -54,7 +54,7 @@
       const countElem = document.getElementById('tags-count');
 
       try {
-        const resp = await fetch('../exports/tags.json');
+        const resp = await window.ArchiveUtils.fetchAsset('exports/tags.json');
         let tags = [];
         if (resp.ok) {
           tags = await resp.json();

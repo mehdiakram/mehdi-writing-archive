@@ -43,13 +43,23 @@ jobs:
         run: |
           python scripts/build.py
 
+      - name: Assemble GitHub Pages Static Bundle
+        run: |
+          mkdir -p _site
+          cp -r website/* _site/
+          cp -r articles _site/
+          cp -r exports _site/
+          cp -r media _site/
+          mkdir -p _site/database
+          cp database/archive.sqlite _site/database/
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'website'
+          path: '_site'
 
       - name: Deploy to GitHub Pages
         id: deployment

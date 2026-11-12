@@ -51,7 +51,7 @@
     document.addEventListener('DOMContentLoaded', async () => {
       const container = document.getElementById('categories-container');
       try {
-        const resp = await fetch('../exports/categories.json');
+        const resp = await window.ArchiveUtils.fetchAsset('exports/categories.json');
         let categories = [];
         if (resp.ok) {
           categories = await resp.json();

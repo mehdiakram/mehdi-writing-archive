@@ -100,6 +100,10 @@
           <strong>Archival Citation:</strong><br>
           <span id="art-citation"></span>
         </div>
+
+        <!-- Previous / Next Navigation -->
+        <nav id="art-prev-next" style="display: flex; justify-content: space-between; gap: 15px; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border-color); flex-wrap: wrap;">
+        </nav>
       </div>
     </div>
   </main>
@@ -143,7 +147,7 @@
         }
 
         // Fetch Markdown content from markdown_path
-        const mdResp = await fetch('../' + article.markdown_path);
+        const mdResp = await window.ArchiveUtils.fetchAsset(article.markdown_path);
         let rawMarkdown = '';
         if (mdResp.ok) {
           rawMarkdown = await mdResp.text();
@@ -182,7 +186,7 @@
         // Featured image
         const featImg = document.getElementById('art-featured-image');
         if (article.featured_image) {
-          featImg.src = article.featured_image.startsWith('http') ? article.featured_image : '../' + article.featured_image;
+          featImg.src = window.ArchiveUtils.resolveAssetPath(article.featured_image);
           featImg.style.display = 'block';
         }
 
@@ -196,7 +200,7 @@
 
         // Markdown download link
         const dlLink = document.getElementById('art-md-download');
-        dlLink.href = '../' + article.markdown_path;
+        dlLink.href = window.ArchiveUtils.resolveAssetPath(article.markdown_path);
         dlLink.setAttribute('download', `${article.slug}.md`);
 
         // Categories & Tags
@@ -206,6 +210,18 @@
         // Citation
         const citation = `Akram, M. (${article.published_at ? article.published_at.substring(0, 4) : 'n.d.'}). "${article.title}". Originally published at ${article.source_name} (${article.original_url}). Preserved in Mehdi's Digital Legacy Archive (ID: ${article.archive_id}).`;
         document.getElementById('art-citation').textContent = citation;
+
+        // Previous & Next Articles
+        const idx = articles.findIndex(a => a.archive_id === archiveId);
+        const navElem = document.getElementById('art-prev-next');
+        if (navElem && idx !== -1) {
+          const prevArt = idx < articles.length - 1 ? articles[idx + 1] : null;
+          const nextArt = idx > 0 ? articles[idx - 1] : null;
+          navElem.innerHTML = `
+            <div>${prevArt ? `<a href="article.html?id=${prevArt.archive_id}" class="btn">← Older: ${window.ArchiveUtils.escapeHtml(prevArt.title.substring(0, 35))}...</a>` : ''}</div>
+            <div>${nextArt ? `<a href="article.html?id=${nextArt.archive_id}" class="btn">Newer: ${window.ArchiveUtils.escapeHtml(nextArt.title.substring(0, 35))}... →</a>` : ''}</div>
+          `;
+        }
 
         loader.style.display = 'none';
         view.style.display = 'block';

@@ -51,7 +51,7 @@
           Complete normalized SQLite 3 database containing all articles, revisions, categories, tags, media metadata, and full-text search virtual tables.
         </p>
         <div class="source-card-footer">
-          <a href="../database/archive.sqlite" class="btn btn-primary" download>Download archive.sqlite (Direct)</a>
+          <a href="../database/archive.sqlite" data-asset="database/archive.sqlite" class="btn btn-primary" download>Download archive.sqlite (Direct)</a>
           <a href="https://sqlitebrowser.org/" target="_blank" rel="noopener">Get DB Browser for SQLite ↗</a>
         </div>
       </div>
@@ -68,10 +68,10 @@
           <code>articles.json</code>, <code>categories.json</code>, <code>tags.json</code>, and <code>manifest.json</code>.
         </p>
         <div class="source-card-footer" style="flex-wrap: wrap; gap: 10px;">
-          <a href="../exports/articles.json" class="btn" download>articles.json</a>
-          <a href="../exports/categories.json" class="btn" download>categories.json</a>
-          <a href="../exports/tags.json" class="btn" download>tags.json</a>
-          <a href="../exports/manifest.json" class="btn" download>manifest.json</a>
+          <a href="../exports/articles.json" data-asset="exports/articles.json" class="btn" download>articles.json</a>
+          <a href="../exports/categories.json" data-asset="exports/categories.json" class="btn" download>categories.json</a>
+          <a href="../exports/tags.json" data-asset="exports/tags.json" class="btn" download>tags.json</a>
+          <a href="../exports/manifest.json" data-asset="exports/manifest.json" class="btn" download>manifest.json</a>
         </div>
       </div>
 
@@ -99,5 +99,12 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[data-asset]').forEach(link => {
+        link.href = window.ArchiveUtils.resolveAssetPath(link.dataset.asset);
+      });
+    });
+  </script>
 </body>
 </html>

@@ -57,6 +57,25 @@
       return urlParams.get(param);
     },
 
+    resolveAssetPath: function (relPath) {
+      if (!relPath) return '';
+      if (relPath.startsWith('http://') || relPath.startsWith('https://')) return relPath;
+      const clean = relPath.replace(/^\/+/, '');
+      if (window.location.pathname.includes('/website/')) {
+        return '../' + clean;
+      }
+      return clean;
+    },
+
+    fetchAsset: async function (relPath) {
+      const primary = window.ArchiveUtils.resolveAssetPath(relPath);
+      let resp = await fetch(primary);
+      if (!resp.ok && !primary.startsWith('../')) {
+        resp = await fetch('../' + relPath.replace(/^\/+/, ''));
+      }
+      return resp;
+    },
+
     renderArticleCard: function (article) {
       const isRoyal = article.source === 'royaltechbd';
       const badgeClass = isRoyal ? 'badge-royal' : 'badge-shamokal';
