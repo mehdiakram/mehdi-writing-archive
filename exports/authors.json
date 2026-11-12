@@ -1,11 +1,38 @@
 [
   {
     "id": 1,
+    "source": "royaltechbd",
+    "wordpress_author_id": 2,
+    "name": "S M Mehdi Akram",
+    "slug": "mehdi",
+    "url": "http://www.shamokaldarpon.com/",
+    "description": ""
+  },
+  {
+    "id": 2,
     "source": "shamokaldarpon",
-    "wordpress_author_id": 1,
-    "name": "মেহেদী আকরাম",
-    "slug": "author",
+    "wordpress_author_id": 1945,
+    "name": "admin",
+    "slug": "admin",
+    "url": "http://www.shamokaldarpon.com",
+    "description": ""
+  },
+  {
+    "id": 3,
+    "source": "shamokaldarpon",
+    "wordpress_author_id": 245645657,
+    "name": "অতিথী পোষ্ট",
+    "slug": "guestuser",
     "url": "",
+    "description": ""
+  },
+  {
+    "id": 4,
+    "source": "shamokaldarpon",
+    "wordpress_author_id": 2,
+    "name": "মেহেদী আকরাম",
+    "slug": "mehdi",
+    "url": "http://www.shamokaldarpon.com",
     "description": ""
   }
 ]

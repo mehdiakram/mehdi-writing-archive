@@ -46,6 +46,7 @@ jobs:
       - name: Assemble GitHub Pages Static Bundle
         run: |
           mkdir -p _site
+          touch _site/.nojekyll
           cp -r website/* _site/
           cp -r articles _site/
           cp -r exports _site/

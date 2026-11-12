@@ -1,11 +1,335 @@
 [
   {
     "id": 1,
-    "source": "shamokaldarpon",
-    "wordpress_category_id": 33144,
-    "name": "জরুরি সেবা",
-    "slug": "জরুরি-সেবা",
+    "source": "royaltechbd",
+    "wordpress_category_id": 505,
+    "name": "Business",
+    "slug": "business",
+    "description": "",
+    "count": 1
+  },
+  {
+    "id": 2,
+    "source": "royaltechbd",
+    "wordpress_category_id": 39,
+    "name": "EarnTips",
+    "slug": "earntips",
     "description": "",
     "count": 0
+  },
+  {
+    "id": 3,
+    "source": "royaltechbd",
+    "wordpress_category_id": 147,
+    "name": "Google",
+    "slug": "google",
+    "description": "",
+    "count": 4
+  },
+  {
+    "id": 4,
+    "source": "royaltechbd",
+    "wordpress_category_id": 2,
+    "name": "Graphic Design",
+    "slug": "graphic-design",
+    "description": "",
+    "count": 0
+  },
+  {
+    "id": 6,
+    "source": "royaltechbd",
+    "wordpress_category_id": 254,
+    "name": "MS Office",
+    "slug": "ms-office",
+    "description": "",
+    "count": 1
+  },
+  {
+    "id": 5,
+    "source": "royaltechbd",
+    "wordpress_category_id": 1,
+    "name": "Miscellaneous",
+    "slug": "miscellaneous",
+    "description": "",
+    "count": 22
+  },
+  {
+    "id": 7,
+    "source": "royaltechbd",
+    "wordpress_category_id": 4,
+    "name": "Online",
+    "slug": "online",
+    "description": "",
+    "count": 11
+  },
+  {
+    "id": 8,
+    "source": "royaltechbd",
+    "wordpress_category_id": 155,
+    "name": "Our Plugins",
+    "slug": "our-plugins",
+    "description": "",
+    "count": 14
+  },
+  {
+    "id": 9,
+    "source": "royaltechbd",
+    "wordpress_category_id": 329,
+    "name": "Royal Addons for Elementor",
+    "slug": "royal-addons-for-elementor",
+    "description": "",
+    "count": 7
+  },
+  {
+    "id": 10,
+    "source": "royaltechbd",
+    "wordpress_category_id": 63,
+    "name": "Software Review",
+    "slug": "software-review",
+    "description": "",
+    "count": 46
+  },
+  {
+    "id": 11,
+    "source": "royaltechbd",
+    "wordpress_category_id": 27,
+    "name": "Tips",
+    "slug": "tips",
+    "description": "",
+    "count": 28
+  },
+  {
+    "id": 12,
+    "source": "royaltechbd",
+    "wordpress_category_id": 328,
+    "name": "Tools",
+    "slug": "tools",
+    "description": "",
+    "count": 5
+  },
+  {
+    "id": 13,
+    "source": "royaltechbd",
+    "wordpress_category_id": 5,
+    "name": "Video",
+    "slug": "video",
+    "description": "",
+    "count": 0
+  },
+  {
+    "id": 14,
+    "source": "royaltechbd",
+    "wordpress_category_id": 6,
+    "name": "Web Development",
+    "slug": "web-development",
+    "description": "",
+    "count": 16
+  },
+  {
+    "id": 15,
+    "source": "royaltechbd",
+    "wordpress_category_id": 3,
+    "name": "Windows",
+    "slug": "windows",
+    "description": "",
+    "count": 3
+  },
+  {
+    "id": 16,
+    "source": "royaltechbd",
+    "wordpress_category_id": 47,
+    "name": "Wordpress",
+    "slug": "wordpress",
+    "description": "",
+    "count": 21
+  },
+  {
+    "id": 17,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 4027,
+    "name": "AI",
+    "slug": "ai",
+    "description": "",
+    "count": 5
+  },
+  {
+    "id": 18,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 3969,
+    "name": "অটোমেশন",
+    "slug": "automation",
+    "description": "",
+    "count": 4
+  },
+  {
+    "id": 19,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 1230,
+    "name": "অপারেটিং সিস্টেম",
+    "slug": "operating-system",
+    "description": "",
+    "count": 30
+  },
+  {
+    "id": 20,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 3865,
+    "name": "অ্যাফিলিয়েট",
+    "slug": "affiliate",
+    "description": "",
+    "count": 8
+  },
+  {
+    "id": 21,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 4,
+    "name": "আমার দেশ",
+    "slug": "my-country",
+    "description": "",
+    "count": 15
+  },
+  {
+    "id": 22,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 1034,
+    "name": "ইমেইল",
+    "slug": "email",
+    "description": "",
+    "count": 41
+  },
+  {
+    "id": 23,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 13,
+    "name": "ইসলাম",
+    "slug": "islam",
+    "description": "",
+    "count": 5
+  },
+  {
+    "id": 25,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 3643,
+    "name": "ওয়েব ডিজাইন এবং ডেভেলপমেন্ট",
+    "slug": "web-design-and-development",
+    "description": "",
+    "count": 9
+  },
+  {
+    "id": 24,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 1579,
+    "name": "ওয়ার্ডপ্রেস",
+    "slug": "wordpress",
+    "description": "",
+    "count": 22
+  },
+  {
+    "id": 26,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 26,
+    "name": "ওয়েবসাইট",
+    "slug": "website",
+    "description": "",
+    "count": 110
+  },
+  {
+    "id": 27,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 1274,
+    "name": "কবিতা",
+    "slug": "poem",
+    "description": "",
+    "count": 74
+  },
+  {
+    "id": 28,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 5,
+    "name": "কম্পিউটার ও প্রযুক্তি",
+    "slug": "computer-technology",
+    "description": "",
+    "count": 166
+  },
+  {
+    "id": 29,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 9,
+    "name": "জীবন ও জীবিকা",
+    "slug": "life",
+    "description": "",
+    "count": 17
+  },
+  {
+    "id": 30,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 11,
+    "name": "টিপস এন্ড ট্রিকস",
+    "slug": "tips-and-tricks",
+    "description": "",
+    "count": 389
+  },
+  {
+    "id": 31,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 3878,
+    "name": "ডোমেইন হোষ্টিং",
+    "slug": "domain-hosting",
+    "description": "",
+    "count": 14
+  },
+  {
+    "id": 32,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 3,
+    "name": "বিবিধ",
+    "slug": "miscellaneous",
+    "description": "",
+    "count": 58
+  },
+  {
+    "id": 33,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 826,
+    "name": "ব্রাউজার",
+    "slug": "browser",
+    "description": "",
+    "count": 82
+  },
+  {
+    "id": 34,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 2666,
+    "name": "ভ্রমন",
+    "slug": "travel",
+    "description": "",
+    "count": 10
+  },
+  {
+    "id": 35,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 17,
+    "name": "সফটওয়্যার রিভিউ",
+    "slug": "software-review",
+    "description": "",
+    "count": 140
+  },
+  {
+    "id": 36,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 3558,
+    "name": "সামাজিক নেটওয়ার্ক",
+    "slug": "social-network",
+    "description": "",
+    "count": 25
+  },
+  {
+    "id": 37,
+    "source": "shamokaldarpon",
+    "wordpress_category_id": 19,
+    "name": "হ্যাকিং / নিরাপত্তা",
+    "slug": "hacking-or-security",
+    "description": "",
+    "count": 56
   }
 ]

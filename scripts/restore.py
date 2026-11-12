@@ -234,8 +234,8 @@ def rebuild_database_from_markdown(db_path: Optional[Path | str] = None) -> int:
 
         print(f"[Rebuild DB] Ingested {reconstructed_count} articles into SQLite.")
         print("[Rebuild DB] Refreshing JSON exports & search indexes...")
-        generate_json_exports(conn)
-        build_search_indexes(conn)
+        generate_json_exports(conn, exports_dir=ROOT_DIR / "exports")
+        build_search_indexes(conn, out_dir=ROOT_DIR / "website" / "data")
 
     checkpoint_and_clean_db(target_path)
     print("[Rebuild DB] Rebuild complete and verified.")
