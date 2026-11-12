@@ -4,6 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found | Mehdi's Digital Legacy</title>
+  <script>
+    (function () {
+      var p = window.location.pathname;
+      if (p.indexOf('/website/') !== -1) {
+        window.location.replace(p.replace('/website/', '/') + window.location.search + window.location.hash);
+        return;
+      }
+      var base = document.createElement('base');
+      if (p.indexOf('/mehdi-writing-archive/') === 0) {
+        base.href = '/mehdi-writing-archive/';
+      }
+      if (base.href) {
+        document.head.appendChild(base);
+      }
+    })();
+  </script>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">

@@ -9,6 +9,7 @@ on:
       - 'articles/**'
       - 'exports/**'
       - 'media/**'
+      - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
 permissions:
@@ -51,8 +52,15 @@ jobs:
           cp -r articles _site/
           cp -r exports _site/
           cp -r media _site/
-          mkdir -p _site/database
+          mkdir -p _site/database _site/website
           cp database/archive.sqlite _site/database/
+          python -c "
+          import os
+          pages = ['index.html','archive.html','article.html','author.html','categories.html','search.html','tags.html','about.html']
+          tpl = '<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><title>Redirecting... | Mehdi\'s Digital Legacy</title><script>window.location.replace(\"../{p}\" + window.location.search + window.location.hash);</script><meta http-equiv=\"refresh\" content=\"0; url=../{p}\"></head><body><p>Redirecting to <a href=\"../{p}\">{p}</a>...</p></body></html>\n'
+          for p in pages:
+              open(os.path.join('_site/website', p), 'w', encoding='utf-8').write(tpl.format(p=p))
+          "
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
