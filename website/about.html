@@ -3,9 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About the Archive | Mehdi's Digital Legacy</title>
-  <meta name="description" content="The preservation philosophy, architecture, and principles of Mehdi's Digital Legacy.">
+  <title>About Mehdi Akram &amp; The Digital Legacy | Mehdi's Digital Legacy</title>
+  <meta name="description" content="Biography of S M Mehdi Akram (এস এম মেহেদী আকরাম) and the digital preservation philosophy of Mehdi's Digital Legacy.">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .profile-hero {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .profile-avatar {
+      width: 210px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      flex-shrink: 0;
+    }
+    .profile-intro {
+      flex: 1;
+      min-width: 260px;
+    }
+    .bio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 12px 24px;
+      margin: 20px 0 30px;
+      background-color: var(--bg-subtle);
+      padding: 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      font-family: var(--font-sans);
+      font-size: 0.96rem;
+    }
+    .bio-row {
+      display: flex;
+      gap: 10px;
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--border-color);
+    }
+    .bio-label {
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 125px;
+      flex-shrink: 0;
+    }
+    .bio-value {
+      color: var(--text-primary);
+    }
+    @media (max-width: 640px) {
+      .profile-hero {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -31,54 +88,88 @@
   <!-- Main Container -->
   <main class="main-container content-narrow">
     <article class="article-body" style="background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 40px;">
-      <h1 class="hero-title" style="margin-bottom: 15px;">About Mehdi's Digital Legacy</h1>
-      <p style="font-size: 1.15rem; color: var(--accent); font-style: italic; margin-bottom: 30px;">
-        "A Lifetime of Thoughts, Knowledge and Experiences, Preserved for Generations."
+      
+      <!-- Profile Hero -->
+      <div class="profile-hero">
+        <img src="assets/images/mehdi-akram.png" alt="S M Mehdi Akram" class="profile-avatar">
+        <div class="profile-intro">
+          <span class="source-badge badge-royal" style="margin-bottom: 10px;">Author &amp; Founder</span>
+          <h1 class="hero-title" style="margin-bottom: 8px; text-align: left;">S M Mehdi Akram</h1>
+          <h2 style="font-size: 1.35rem; color: var(--accent); margin: 0 0 14px; border: none; padding: 0;">এস এম মেহেদী আকরাম [রয়েল]</h2>
+          <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 12px; font-family: var(--font-sans);">
+            Founder &amp; CEO, <strong>Royal Technologies</strong> &bull; President, <strong>Prime University Alumni Association (PULLA, 2025–2026)</strong> &bull; Technology Author &amp; Entrepreneur
+          </p>
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0; font-style: italic;">
+            "A Lifetime of Thoughts, Knowledge and Experiences, Preserved for Generations." — জীবনের লক্ষ্য: মানুষের মাঝে বেঁচে থাকা।
+          </p>
+        </div>
+      </div>
+
+      <!-- Professional Profile (English) -->
+      <h2>1. Professional &amp; Academic Journey</h2>
+      <p>
+        <strong>S M Mehdi Akram</strong> is a distinguished Bangladeshi IT professional, entrepreneur, and academic achiever with over 17 years of experience in the information technology sector. Born in <strong>Kushtia, Bangladesh</strong>, he completed his <strong>B.Sc. in Computer Science and Engineering (CSE)</strong> from Prime University, Dhaka, and further earned his <strong>M.Sc. / MCS in Computer Science</strong> from the University of South Asia, Dhaka. He currently serves as the <strong>President of the Prime University Alumni Association (PULLA)</strong> for the 2025–2026 term.
+      </p>
+      <p>
+        As the <strong>Founder and CEO of <a href="https://www.royaltechbd.com/" target="_blank" rel="noopener">Royal Technologies</a></strong> (established in 2008, with offices in Kushtia and Dhaka), he has spearheaded a comprehensive range of IT solutions including web design, web hosting, domain registration, search engine optimization, IT consulting, and custom software development.
+      </p>
+      <p>
+        As a prolific bilingual technology writer, he has authored columns for the <em>Daily Amar Desh</em> and maintains both the English <a href="https://www.royaltechbd.com/" target="_blank" rel="noopener">Royal Tech Blog</a> and the Bengali technology blog <a href="https://www.shamokaldarpon.com/" target="_blank" rel="noopener">সমকাল দর্পণ (Shamokal Darpon)</a>. He is also an active contributor across open digital platforms including WordPress, Fiverr, and GitHub.
       </p>
 
-      <h2>1. The Problem of Digital Fragility</h2>
-      <p>
-        The modern web is built on shifting sands. When writers publish online, their work is usually tethered to dynamic databases (like MySQL), proprietary Content Management Systems (like WordPress), active monthly hosting subscriptions, and renewable domain names.
-      </p>
-      <p>
-        If an author passes away, if hosting invoices fail to renew, or if CMS code evolves into backwards-incompatibility, decades of writing can vanish overnight. This phenomenon is known as <strong>digital decay</strong>.
-      </p>
+      <!-- Personal Bio in Bengali (আমার আমি) -->
+      <h2>২. আমার আমি — ব্যক্তিগত পরিচিতি ও জীবনদর্শন (সমকাল দর্পণ থেকে)</h2>
+      <div class="bio-grid">
+        <div>
+          <div class="bio-row"><span class="bio-label">নাম</span><span class="bio-value">এস এম মেহেদী আকরাম [রয়েল]</span></div>
+          <div class="bio-row"><span class="bio-label">পিতা</span><span class="bio-value">এস এম আকরাম হোসেন</span></div>
+          <div class="bio-row"><span class="bio-label">মাতা</span><span class="bio-value">মিসেস রহিমা আকরাম</span></div>
+          <div class="bio-row"><span class="bio-label">জন্ম তারিখ</span><span class="bio-value">২২ অক্টোবর</span></div>
+          <div class="bio-row"><span class="bio-label">স্থায়ী ঠিকানা</span><span class="bio-value">কুষ্টিয়া</span></div>
+          <div class="bio-row"><span class="bio-label">বর্তমান ঠিকানা</span><span class="bio-value">ঢাকা</span></div>
+          <div class="bio-row"><span class="bio-label">রক্তের গ্রুপ</span><span class="bio-value">এবি+ (AB+)</span></div>
+          <div class="bio-row"><span class="bio-label">ধর্ম</span><span class="bio-value">ইসলাম</span></div>
+          <div class="bio-row"><span class="bio-label">বৈবাহিক অবস্থা</span><span class="bio-value">বিবাহিত</span></div>
+          <div class="bio-row"><span class="bio-label">লেখাপড়া</span><span class="bio-value">স্কুল: কমলাপুর মাধ্যমিক বিদ্যালয়, কুষ্টিয়া<br>কলেজ: কুষ্টিয়া সরকারী বিশ্ববিদ্যালয় কলেজ<br>বিএসসি: প্রাইম ইউনিভার্সিটি (সিএসই), ঢাকা<br>এমসিএস: ইউনিভার্সিটি অব সাউথ এশিয়া, ঢাকা</span></div>
+        </div>
+        <div>
+          <div class="bio-row"><span class="bio-label">লেখালেখি</span><span class="bio-value">কবিতা, গল্প ও কম্পিউটার বিষয়ে</span></div>
+          <div class="bio-row"><span class="bio-label">খেলাধুলা</span><span class="bio-value">দাবা, টেবিল টেনিস ও ক্রিকেট খেলা দেখা</span></div>
+          <div class="bio-row"><span class="bio-label">জীবনের লক্ষ্য</span><span class="bio-value">মানুষের মাঝে বেঁচে থাকা</span></div>
+          <div class="bio-row"><span class="bio-label">প্রিয় ব্যক্তিত্ব</span><span class="bio-value">মহানবী হযরত মুহাম্মদ (সাঃ)</span></div>
+          <div class="bio-row"><span class="bio-label">প্রিয় ব্যক্তি</span><span class="bio-value">বাবা</span></div>
+          <div class="bio-row"><span class="bio-label">পছন্দের বিষয়</span><span class="bio-value">লেখালেখি করা, সাহায্য করা</span></div>
+          <div class="bio-row"><span class="bio-label">অপছন্দের বিষয়</span><span class="bio-value">নিন্দা করা, করুণা করা, মিথ্যা</span></div>
+          <div class="bio-row"><span class="bio-label">গর্ব করি</span><span class="bio-value">বাংলাদেশকে নিয়ে</span></div>
+          <div class="bio-row"><span class="bio-label">অবসর কাটে</span><span class="bio-value">বই পড়ে, গান শুনে, কবিতা লিখে এবং কম্পিউটার নিয়ে</span></div>
+          <div class="bio-row"><span class="bio-label">চেষ্টা করছি</span><span class="bio-value">সৎভাবে বেঁচে থাকতে</span></div>
+          <div class="bio-row"><span class="bio-label">যোগাযোগ</span><span class="bio-value">ই-মেইল: <a href="mailto:mehdi.akram@gmail.com">mehdi.akram@gmail.com</a><br>মোবাইল: +88-01973-245450</span></div>
+        </div>
+      </div>
 
-      <h2>2. Radical Independence Architecture</h2>
+      <!-- Preservation Philosophy -->
+      <h2>3. About This Digital Legacy Platform</h2>
       <p>
-        This archive was designed under the principle of <strong>radical digital independence</strong>. It guarantees that Mehdi Akram's published writings will outlive their original hosting environments:
+        This archive was engineered under the principle of <strong>radical digital independence</strong> to guarantee that all of Mehdi Akram's published writings from <a href="https://www.royaltechbd.com/" target="_blank" rel="noopener">Royal Technologies</a> and <a href="https://www.shamokaldarpon.com/" target="_blank" rel="noopener">সমকাল দর্পণ</a> remain accessible forever—even if original domains, hosting servers, or CMS platforms disappear.
       </p>
       <ul>
-        <li><strong>Zero Permanent Server Dependencies:</strong> The public archive runs as pure static HTML/CSS/JS without PHP or SQL database servers. It can be hosted on GitHub Pages or viewed directly from an offline USB drive.</li>
-        <li><strong>Tri-Layer Data Redundancy:</strong> Content is preserved simultaneously in an ACID SQLite 3 database with FTS5 search, human-readable Markdown (.md) files, and deterministic JSON exports.</li>
-        <li><strong>Bidirectional Reconstruction:</strong> If the database is deleted, running <code>python scripts/restore.py --rebuild-database</code> reconstructs the complete database from the raw Markdown files.</li>
-        <li><strong>Multilingual Equity:</strong> Native support for the Bengali script (বাংলা) and English across search, frontmatter, and file paths.</li>
+        <li><strong>Zero Server Dependencies:</strong> Operates entirely as static HTML/CSS/JS without PHP or MySQL servers.</li>
+        <li><strong>Tri-Layer Redundancy:</strong> Every article is simultaneously preserved in an ACID SQLite 3 database (with FTS5 Bengali &amp; English search), clean UTF-8 Markdown files, and deterministic JSON exports.</li>
+        <li><strong>3-2-1 Preservation Standard:</strong> Replicated across public GitHub history, automated cloud backups, and offline external storage.</li>
       </ul>
 
-      <h2>3. The 3-2-1 Preservation Strategy</h2>
-      <p>
-        The archive follows the global archival 3-2-1 backup standard:
-      </p>
-      <ol>
-        <li><strong>Copy 1 (Active Production):</strong> The public, version-controlled GitHub repository.</li>
-        <li><strong>Copy 2 (Automated Cloud Backup):</strong> Weekly compressed snapshot packages created via GitHub Actions workflows.</li>
-        <li><strong>Copy 3 (Cold Physical Storage):</strong> Offline storage on an external hard drive or optical media, updated via <code>python scripts/backup.py</code>.</li>
-      </ol>
-
-      <h2>4. Documentation & Recovery Manuals</h2>
-      <p>
-        Complete recovery manuals for non-programmers and archivists are available in both languages:
-      </p>
-      <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
-        <a href="https://github.com/mehdiakram/mehdi-writing-archive/blob/main/DIGITAL-LEGACY.md" target="_blank" class="btn btn-primary">English Manual (DIGITAL-LEGACY.md) ↗</a>
-        <a href="https://github.com/mehdiakram/mehdi-writing-archive/blob/main/DIGITAL-LEGACY-BN.md" target="_blank" class="btn btn-primary">বাংলা গাইড (DIGITAL-LEGACY-BN.md) ↗</a>
+      <div style="display: flex; gap: 15px; margin-top: 25px; flex-wrap: wrap;">
+        <a href="search.html?source=royaltechbd" class="btn btn-primary">Explore RoyalTech Articles →</a>
+        <a href="search.html?source=shamokaldarpon" class="btn btn-primary">সমকাল দর্পণের লেখা পড়ুন →</a>
+        <a href="https://github.com/mehdiakram/mehdi-writing-archive/blob/main/DIGITAL-LEGACY-BN.md" target="_blank" class="btn">বাংলা গাইড (DIGITAL-LEGACY-BN.md) ↗</a>
+        <a href="https://github.com/mehdiakram/mehdi-writing-archive/blob/main/DIGITAL-LEGACY.md" target="_blank" class="btn">English Manual ↗</a>
       </div>
     </article>
   </main>
 
   <!-- Footer -->
   <footer class="site-footer">
-    <p>Mehdi's Digital Legacy — Built for Long-Term Digital Preservation.</p>
+    <p>Mehdi's Digital Legacy — S M Mehdi Akram (এস এম মেহেদী আকরাম) &bull; Built for Long-Term Digital Preservation.</p>
   </footer>
 
   <script src="assets/js/main.js"></script>
