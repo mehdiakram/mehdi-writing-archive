@@ -26,7 +26,7 @@
   --source-shamokal: #065f46;
   
   --max-width: 1100px;
-  --content-width: 780px;
+  --content-width: 1100px;
   --header-height: 70px;
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -171,14 +171,14 @@ img {
 /* Main Layout */
 .main-container {
   max-width: var(--max-width);
-  margin: 30px auto 60px;
+  margin: 40px auto 60px;
   padding: 0 20px;
   min-height: calc(100vh - 280px);
 }
 
 .content-narrow {
   max-width: var(--content-width);
-  margin: 0 auto;
+  margin: 40px auto 60px;
 }
 
 /* Hero Section */
@@ -438,7 +438,8 @@ img {
 
 .article-featured-img {
   width: 100%;
-  max-height: 480px;
+  height: auto;
+  max-height: 620px;
   object-fit: cover;
   border-radius: var(--radius-md);
   margin-bottom: 30px;
