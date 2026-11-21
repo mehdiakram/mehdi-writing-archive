@@ -34,5 +34,14 @@
     "slug": "mehdi",
     "url": "http://www.shamokaldarpon.com",
     "description": ""
+  },
+  {
+    "id": 26,
+    "source": "royaltechbd",
+    "wordpress_author_id": 1,
+    "name": "Mehdi Akram",
+    "slug": "mehdi-akram",
+    "url": "",
+    "description": ""
   }
 ]
