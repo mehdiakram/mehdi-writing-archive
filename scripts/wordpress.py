@@ -6,6 +6,7 @@ pagination header parsing, and strict error handling.
 
 from __future__ import annotations
 
+import json
 import logging
 import time
 from typing import Any, Dict, Generator, List, Optional, Tuple
@@ -95,17 +96,28 @@ class WordPressAPIClient:
             f"Failed to fetch {url} after {self.max_retries} attempts: {last_exception}"
         ) from last_exception
 
+    @staticmethod
+    def _parse_json(resp: requests.Response) -> Any:
+        """Parses JSON safely, stripping UTF-8 BOM(s) or surrounding whitespace."""
+        raw = resp.content
+        while raw.startswith(b"\xef\xbb\xbf"):
+            raw = raw[3:]
+        raw = raw.lstrip(b" \t\r\n")
+        encoding = resp.encoding if (resp.encoding and resp.encoding.lower() != "iso-8859-1") else "utf-8"
+        text = raw.decode(encoding, errors="replace").lstrip("\ufeff \t\r\n")
+        return json.loads(text)
+
     def get_site_info(self) -> Dict[str, Any]:
         """Fetches root site information from /wp-json."""
         root_url = f"{self.base_url}/wp-json"
         resp = self._request(root_url)
-        return resp.json()
+        return self._parse_json(resp)
 
     def get_users(self) -> List[Dict[str, Any]]:
         """Fetches all public users / authors."""
         try:
             resp = self._request("users", params={"per_page": 100})
-            return resp.json()
+            return self._parse_json(resp)
         except Exception as e:
             logger.warning(f"[{self.source_key}] Could not fetch users: {e}")
             return []
@@ -117,7 +129,7 @@ class WordPressAPIClient:
         while True:
             try:
                 resp = self._request("categories", params={"per_page": 100, "page": page})
-                data = resp.json()
+                data = self._parse_json(resp)
                 if not data or not isinstance(data, list):
                     break
                 categories.extend(data)
@@ -138,7 +150,7 @@ class WordPressAPIClient:
         while True:
             try:
                 resp = self._request("tags", params={"per_page": 100, "page": page})
-                data = resp.json()
+                data = self._parse_json(resp)
                 if not data or not isinstance(data, list):
                     break
                 tags.extend(data)
@@ -177,7 +189,7 @@ class WordPressAPIClient:
             params["modified_after"] = modified_after
             
         resp = self._request("posts", params=params)
-        posts_data = resp.json()
+        posts_data = self._parse_json(resp)
         
         total_posts = int(resp.headers.get("X-WP-Total", len(posts_data)))
         total_pages = int(resp.headers.get("X-WP-TotalPages", 1))
@@ -211,7 +223,7 @@ class WordPressAPIClient:
         """Fetches details for a specific media item by ID."""
         try:
             resp = self._request(f"media/{media_id}")
-            return resp.json()
+            return self._parse_json(resp)
         except Exception as e:
             logger.warning(f"[{self.source_key}] Could not fetch media ID {media_id}: {e}")
             return None

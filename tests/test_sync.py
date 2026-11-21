@@ -86,3 +86,22 @@ def test_mocked_sync_and_revision_generation(tmp_path: Path, mock_fixtures):
                     "SELECT title FROM posts WHERE archive_id = 'royaltechbd-4600'"
                 ).fetchone()
                 assert updated_post["title"] == "Updated Title for Social Media Manager"
+
+
+def test_wordpress_client_handles_utf8_bom():
+    """Ensures WordPressAPIClient gracefully handles leading UTF-8 BOM characters."""
+    from scripts.wordpress import WordPressAPIClient
+    import requests
+
+    client = WordPressAPIClient("https://example.com", "https://example.com/wp-json/wp/v2", "test")
+    
+    # Mock response with multiple UTF-8 BOM bytes
+    mock_resp = requests.Response()
+    mock_resp._content = b"\xef\xbb\xbf\xef\xbb\xbf\xef\xbb\xbf[{\"id\": 1, \"name\": \"Admin\"}]"
+    mock_resp.encoding = "UTF-8"
+
+    result = client._parse_json(mock_resp)
+    assert isinstance(result, list)
+    assert len(result) == 1
+    assert result[0]["name"] == "Admin"
+
