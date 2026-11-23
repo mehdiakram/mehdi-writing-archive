@@ -1,0 +1,30 @@
+[
+  {
+    "source_key": "royaltechbd",
+    "source_name": "Royal Technologies",
+    "mode": "incremental",
+    "status": "success",
+    "posts_created": 0,
+    "posts_updated": 0,
+    "posts_unchanged": 1,
+    "media_downloaded": 1,
+    "errors_count": 0,
+    "error_details": [],
+    "started_at": "2026-11-23T06:02:13.735608+00:00",
+    "finished_at": "2026-11-23T06:02:26.075069+00:00"
+  },
+  {
+    "source_key": "shamokaldarpon",
+    "source_name": "সমকাল দর্পণ",
+    "mode": "incremental",
+    "status": "success",
+    "posts_created": 0,
+    "posts_updated": 0,
+    "posts_unchanged": 3,
+    "media_downloaded": 3,
+    "errors_count": 0,
+    "error_details": [],
+    "started_at": "2026-11-23T06:02:26.076863+00:00",
+    "finished_at": "2026-11-23T06:03:09.590569+00:00"
+  }
+]
