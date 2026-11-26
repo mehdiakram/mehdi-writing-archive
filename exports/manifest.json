@@ -1,20 +1,20 @@
 {
-  "archive_generation_timestamp": "2026-11-25T07:17:54.921284+00:00",
+  "archive_generation_timestamp": "2026-11-26T07:06:18.156363+00:00",
   "archive_name": "Mehdi's Digital Legacy",
   "archive_tagline": "A Lifetime of Thoughts, Knowledge and Experiences, Preserved for Generations.",
   "export_format_version": "1.0.0",
   "database_schema_version": 1,
   "archive_integrity_status": "verified",
-  "total_articles": 1272,
+  "total_articles": 1275,
   "article_counts_by_source": {
-    "royaltechbd": 162,
-    "shamokaldarpon": 1110
+    "shamokaldarpon": 1111,
+    "royaltechbd": 164
   },
   "article_counts_by_language": {
-    "en": 148,
-    "bn": 1124
+    "bn": 1125,
+    "en": 150
   },
   "total_categories": 37,
-  "total_tags": 4068,
-  "total_media_files": 164
+  "total_tags": 5148,
+  "total_media_files": 166
 }

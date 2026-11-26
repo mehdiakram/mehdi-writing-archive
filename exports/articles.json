@@ -1,5 +1,82 @@
 [
   {
+    "archive_id": "shamokaldarpon-6530",
+    "source": "shamokaldarpon",
+    "source_name": "সমকাল দর্পণ",
+    "wordpress_id": 6530,
+    "title": "Elementor ওয়েবসাইটে ভার্টিক্যাল লতা, রকেট ও SVG স্ক্রল ইন্ডিকেটর যুক্ত করুন Royal Scroll Progress Indicator দিয়ে",
+    "slug": "royalscrollindicator-extension-elementor",
+    "language": "bn",
+    "excerpt": "ধরুন আপনার একটি অর্গানিক পণ্যের ওয়েবসাইট, কুরিয়ার সার্ভিসের ল্যান্ডিং পেজ কিংবা কোনো টেক স্টোরি পেজ রয়েছে। ভিজিটর যখন পেজটি নিচের দিকে স্ক্রল করেন, তখন সাধারণত স্ক্রিনের ওপরে একটি সমতল বা হরিজন্টাল প্রগ্রেস বার দেখা যায়। সেটি কাজের হলেও ব্র্যান্ডের ধরন অনুযায়ী ভিজ্যুয়াল গল্প তুলে ধরার মতো কোনো বৈচিত্র্য তাতে থাকে না। একবার ভেবে দেখুন, পরিবেশবান্ধব […]",
+    "published_at": "2026-11-26T10:20:48",
+    "modified_at": "2026-11-26T10:20:48",
+    "original_url": "https://www.shamokaldarpon.com/6530/royalscrollindicator-extension-elementor",
+    "author": "মেহেদী আকরাম",
+    "categories": [
+      "ওয়েব ডিজাইন এবং ডেভেলপমেন্ট",
+      "ওয়ার্ডপ্রেস"
+    ],
+    "tags": [
+      "Elementor Extension",
+      "Royal Addons",
+      "SVG স্ক্রল ইন্ডিকেটর",
+      "Scroll Progress Indicator Elementor Pro",
+      "Wordpress"
+    ],
+    "featured_image": "media/shamokaldarpon/featured-royal-scrollindicator.jpg",
+    "markdown_path": "articles/shamokaldarpon/bangla/2026/royalscrollindicator-extension-elementor.md",
+    "content_hash": "9230d19f681046224f23fdd54aa9e69b23cc18e5b9a6171803fd2c81d9932bb8"
+  },
+  {
+    "archive_id": "royaltechbd-4618",
+    "source": "royaltechbd",
+    "source_name": "Royal Technologies",
+    "wordpress_id": 4618,
+    "title": "Build Sleek Editorial & Floating Audio Players in Elementor with Royal Audio Player",
+    "slug": "royalaudioplayer-widget-elementor",
+    "language": "en",
+    "excerpt": "If you run a podcast, music portfolio, audiobook landing page, or Islamic audio archive on WordPress, default browser audio tags quickly look out of place. They clash with your branding, lack proper playlist support, and cannot float smoothly as a persistent listening bar while visitors read your content. To solve this, we are kicking off […]",
+    "published_at": "2026-11-26T09:19:38",
+    "modified_at": "2026-11-26T09:19:38",
+    "original_url": "https://www.royaltechbd.com/royalaudioplayer-widget-elementor/",
+    "author": "S M Mehdi Akram",
+    "categories": [
+      "Our Plugins",
+      "Royal Addons for Elementor"
+    ],
+    "tags": [
+      "Elementor Audio Player",
+      "Podcast Player Elementor",
+      "Royal Addons",
+      "WordPress Audio Widget"
+    ],
+    "featured_image": "media/royaltechbd/featured-royal-audio-player.jpg",
+    "markdown_path": "articles/royaltechbd/english/2026/royalaudioplayer-widget-elementor.md",
+    "content_hash": "5ce7c99c49a2c5c06e3c650ce1ca9a6321084e87ecb7fc560e4e3b713386441b"
+  },
+  {
+    "archive_id": "royaltechbd-4616",
+    "source": "royaltechbd",
+    "source_name": "Royal Technologies",
+    "wordpress_id": 4616,
+    "title": "Royal Addons for Elementor",
+    "slug": "royal-addons-for-elementor",
+    "language": "en",
+    "excerpt": "✦ Royal Addons for Elementor ✦ The Ultimate Elementor Addon193+ Widgets & Extensions Supercharge your Elementor builds with 131 free widgets, 36 Pro widgets, and 22 free extensions. Lightweight, gorgeous, and built for real-world sites. Free Widgets 0 + Pro Widgets 0 + Free Extensions 0 Total Elements 0 + 180 + ★ Core Capabilities […]",
+    "published_at": "2026-11-25T23:23:51",
+    "modified_at": "2026-11-26T09:32:48",
+    "original_url": "https://www.royaltechbd.com/royal-addons-for-elementor/",
+    "author": "S M Mehdi Akram",
+    "categories": [
+      "Our Plugins",
+      "Royal Addons for Elementor"
+    ],
+    "tags": [],
+    "featured_image": "media/royaltechbd/Royal-Addons-for-Elementor.png",
+    "markdown_path": "articles/royaltechbd/english/2026/royal-addons-for-elementor.md",
+    "content_hash": "cc599b16f7627d0de25fc684a25a4d01def0ff2be3b119793fedd458c39a9336"
+  },
+  {
     "archive_id": "royaltechbd-4600",
     "source": "royaltechbd",
     "source_name": "Royal Technologies",
