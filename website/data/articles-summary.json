@@ -1,5 +1,55 @@
 [
   {
+    "archive_id": "shamokaldarpon-6534",
+    "title": "Royal Sticky Header: Elementor-এ ট্রান্সপারেন্ট গ্লাস ও স্ক্রল-শ্রিংক স্টিকি হেডার তৈরির সহজ সমাধান",
+    "slug": "royalstickyheader-extension-elementor",
+    "source": "shamokaldarpon",
+    "source_name": "সমকাল দর্পণ",
+    "language": "bn",
+    "published_at": "2026-11-27T09:51:33",
+    "year": "2026",
+    "excerpt": "WordPress ও Elementor দিয়ে সাইট বানানোর সময় অনেকেই চান পেজের শুরুতে হিরো ছবির ওপর হেডারটি ট্রান্সপারেন্ট থাকুক, আর স্ক্রল করে নিচে নামলে সেটি ছোট হয়ে ফ্রস্টেড গ্লাস বা সলিড রঙে আটকে থাকুক। কিন্তু সাধারণ থিম বা Elementor-এর ডিফল্ট স্টিকি সেটিংস দিয়ে এই ধরনের ট্রানজিশন সহজে তৈরি করা যায় না। ডিফল্ট অপশনে মূলত হেডারকে শুধু স্ক্রিনে […]",
+    "author": "মেহেদী আকরাম",
+    "categories": [
+      "ওয়ার্ডপ্রেস",
+      "ওয়েব ডিজাইন এবং ডেভেলপমেন্ট"
+    ],
+    "tags": [
+      "Royal Addons",
+      "Scroll Distance Header Shrink",
+      "Sticky Header Elementor Pro",
+      "Transparent Glass Blur Navbar WordPress"
+    ],
+    "featured_image": "media/shamokaldarpon/featured-royal-stickyheader.jpg",
+    "original_url": "https://www.shamokaldarpon.com/6534/royalstickyheader-extension-elementor",
+    "markdown_path": "articles/shamokaldarpon/bangla/2026/royalstickyheader-extension-elementor.md"
+  },
+  {
+    "archive_id": "royaltechbd-4621",
+    "title": "Build High-Converting Monthly & Annual Pricing Toggles with Royal Content Toggle",
+    "slug": "royalcontenttoggle-widget-elementor",
+    "source": "royaltechbd",
+    "source_name": "Royal Technologies",
+    "language": "en",
+    "published_at": "2026-11-27T09:32:24",
+    "year": "2026",
+    "excerpt": "In SaaS, hosting, agency, and membership websites, visitors want to compare Monthly vs. Annual billing or standard vs. enterprise packages without scrolling through cluttered pages. Yet most Elementor toggle widgets force you to design two separate saved templates before you can even connect a switch. In Part 2 of our new widget series, meet the […]",
+    "author": "S M Mehdi Akram",
+    "categories": [
+      "Our Plugins",
+      "Royal Addons for Elementor"
+    ],
+    "tags": [
+      "Royal Addons",
+      "Elementor Content Toggle",
+      "Elementor Pricing Table",
+      "Monthly Annual Toggle"
+    ],
+    "featured_image": "media/royaltechbd/featured-royal-content-toggle.jpg",
+    "original_url": "https://www.royaltechbd.com/royalcontenttoggle-widget-elementor/",
+    "markdown_path": "articles/royaltechbd/english/2026/royalcontenttoggle-widget-elementor.md"
+  },
+  {
     "archive_id": "shamokaldarpon-6530",
     "title": "Elementor ওয়েবসাইটে ভার্টিক্যাল লতা, রকেট ও SVG স্ক্রল ইন্ডিকেটর যুক্ত করুন Royal Scroll Progress Indicator দিয়ে",
     "slug": "royalscrollindicator-extension-elementor",
