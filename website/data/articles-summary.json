@@ -1,5 +1,56 @@
 [
   {
+    "archive_id": "royaltechbd-4623",
+    "title": "Design Interactive Process Flows & Stepper Journeys with Royal Step Flow for Elementor",
+    "slug": "royalstepflow-widget-elementor",
+    "source": "royaltechbd",
+    "source_name": "Royal Technologies",
+    "language": "en",
+    "published_at": "2026-11-28T09:30:22",
+    "year": "2026",
+    "excerpt": "Every service page, SaaS onboarding section, and agency landing page needs a clear “How It Works” breakdown. When visitors can grasp your workflow in three or four visual steps, hesitation drops and conversions climb. Yet building aligned icons, connecting lines, and responsive mobile stacks manually inside Elementor columns quickly becomes tedious. In Part 3 of […]",
+    "author": "S M Mehdi Akram",
+    "categories": [
+      "Our Plugins",
+      "Royal Addons for Elementor"
+    ],
+    "tags": [
+      "Royal Addons",
+      "Elementor Step Flow",
+      "Interactive Stepper Elementor",
+      "Process Steps Widget"
+    ],
+    "featured_image": "media/royaltechbd/featured-royal-step-flow.jpg",
+    "original_url": "https://www.royaltechbd.com/royalstepflow-widget-elementor/",
+    "markdown_path": "articles/royaltechbd/english/2026/royalstepflow-widget-elementor.md"
+  },
+  {
+    "archive_id": "shamokaldarpon-6536",
+    "title": "Elementor ওয়েবসাইটে স্ক্রল অ্যানিমেশন, Draw SVG ও ইমেজ সিকোয়েন্স যুক্ত করুন Royal Magic Scroll দিয়ে",
+    "slug": "royalmagicscroll-extension-elementor",
+    "source": "shamokaldarpon",
+    "source_name": "সমকাল দর্পণ",
+    "language": "bn",
+    "published_at": "2026-11-28T09:24:56",
+    "year": "2026",
+    "excerpt": "ওয়েবসাইটে ভিজিটর স্ক্রল করার সাথে সাথে ৩ডি ইমেজ ঘোরানো, SVG লাইন আঁকা বা ডাইনামিক ভিজ্যুয়াল ইফেক্ট যুক্ত করতে গিয়ে কি বাড়তি কোডিংয়ের ঝামেলায় পড়ছেন? বড় ব্র্যান্ডের প্রোডাক্ট লঞ্চ পেজে দেখা যায়, স্ক্রল করলে ওয়্যারলেস ইয়ারবাড ৩৬০ ডিগ্রি ফ্রেম ধরে ঘুরছে, স্ক্রিন জুড়ে উজ্জ্বল SVG সার্কিট লাইন আঁকা হচ্ছে কিংবা স্ক্রলের গভীরতা অনুযায়ী CSS ব্লার, শ্যাডো […]",
+    "author": "মেহেদী আকরাম",
+    "categories": [
+      "ওয়ার্ডপ্রেস",
+      "ওয়েব ডিজাইন এবং ডেভেলপমেন্ট"
+    ],
+    "tags": [
+      "Draw SVG",
+      "Images Sequence",
+      "Magic Scroll Elementor Pro",
+      "Royal Addons",
+      "স্ক্রল অ্যানিমেশন"
+    ],
+    "featured_image": "media/shamokaldarpon/featured-royal-magicscroll.jpg",
+    "original_url": "https://www.shamokaldarpon.com/6536/royalmagicscroll-extension-elementor",
+    "markdown_path": "articles/shamokaldarpon/bangla/2026/royalmagicscroll-extension-elementor.md"
+  },
+  {
     "archive_id": "shamokaldarpon-6534",
     "title": "Royal Sticky Header: Elementor-এ ট্রান্সপারেন্ট গ্লাস ও স্ক্রল-শ্রিংক স্টিকি হেডার তৈরির সহজ সমাধান",
     "slug": "royalstickyheader-extension-elementor",
@@ -109,7 +160,7 @@
     "language": "en",
     "published_at": "2026-11-25T23:23:51",
     "year": "2026",
-    "excerpt": "✦ Royal Addons for Elementor ✦ The Ultimate Elementor Addon193+ Widgets & Extensions Supercharge your Elementor builds with 131 free widgets, 36 Pro widgets, and 22 free extensions. Lightweight, gorgeous, and built for real-world sites. Free Widgets 0 + Pro Widgets 0 + Free Extensions 0 Total Elements 0 + 180 + ★ Core Capabilities […]",
+    "excerpt": "✦ Royal Addons for Elementor ✦ The Ultimate Elementor Addon193+ Widgets & Extensions Supercharge your Elementor builds with 131 free widgets, 36 Pro widgets, and 22 free extensions. Lightweight, gorgeous, and built for real-world sites. Free Widgets 0 + Pro Widgets 0 + Free Extensions 0 Total Elements 0 + 180 + Core Capabilities Royal […]",
     "author": "S M Mehdi Akram",
     "categories": [
       "Our Plugins",

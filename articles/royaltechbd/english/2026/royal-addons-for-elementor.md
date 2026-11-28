@@ -9,16 +9,16 @@ language: en
 status: publish
 published_at: '2026-11-25T23:23:51'
 published_at_gmt: '2026-11-25T17:23:51'
-modified_at: '2026-11-26T09:32:48'
-modified_at_gmt: '2026-11-26T03:32:48'
+modified_at: '2026-11-27T17:27:57'
+modified_at_gmt: '2026-11-27T11:27:57'
 original_url: https://www.royaltechbd.com/royal-addons-for-elementor/
 author: S M Mehdi Akram
 categories:
 - Our Plugins
 - Royal Addons for Elementor
 tags: []
-content_hash: cc599b16f7627d0de25fc684a25a4d01def0ff2be3b119793fedd458c39a9336
-archived_at: '2026-11-26T07:05:12.787123+00:00'
+content_hash: 212d69fcc13e79f39c3c803b644dfe8fad85d9e0af93fff23e4b80aa0c37ce6f
+archived_at: '2026-11-28T06:34:42.502632+00:00'
 ---
 
 ###### ✦ Royal Addons for Elementor ✦
@@ -49,8 +49,6 @@ Total Elements
 
 180
 +
-
-### ★
 
 ###### Core Capabilities
 

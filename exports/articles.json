@@ -1,5 +1,60 @@
 [
   {
+    "archive_id": "royaltechbd-4623",
+    "source": "royaltechbd",
+    "source_name": "Royal Technologies",
+    "wordpress_id": 4623,
+    "title": "Design Interactive Process Flows & Stepper Journeys with Royal Step Flow for Elementor",
+    "slug": "royalstepflow-widget-elementor",
+    "language": "en",
+    "excerpt": "Every service page, SaaS onboarding section, and agency landing page needs a clear “How It Works” breakdown. When visitors can grasp your workflow in three or four visual steps, hesitation drops and conversions climb. Yet building aligned icons, connecting lines, and responsive mobile stacks manually inside Elementor columns quickly becomes tedious. In Part 3 of […]",
+    "published_at": "2026-11-28T09:30:22",
+    "modified_at": "2026-11-28T09:30:22",
+    "original_url": "https://www.royaltechbd.com/royalstepflow-widget-elementor/",
+    "author": "S M Mehdi Akram",
+    "categories": [
+      "Our Plugins",
+      "Royal Addons for Elementor"
+    ],
+    "tags": [
+      "Elementor Step Flow",
+      "Interactive Stepper Elementor",
+      "Process Steps Widget",
+      "Royal Addons"
+    ],
+    "featured_image": "media/royaltechbd/featured-royal-step-flow.jpg",
+    "markdown_path": "articles/royaltechbd/english/2026/royalstepflow-widget-elementor.md",
+    "content_hash": "b7028d52e093c01bf1c6bd0b3e0033cb521a75f9fd548f868d5d471e1f37467c"
+  },
+  {
+    "archive_id": "shamokaldarpon-6536",
+    "source": "shamokaldarpon",
+    "source_name": "সমকাল দর্পণ",
+    "wordpress_id": 6536,
+    "title": "Elementor ওয়েবসাইটে স্ক্রল অ্যানিমেশন, Draw SVG ও ইমেজ সিকোয়েন্স যুক্ত করুন Royal Magic Scroll দিয়ে",
+    "slug": "royalmagicscroll-extension-elementor",
+    "language": "bn",
+    "excerpt": "ওয়েবসাইটে ভিজিটর স্ক্রল করার সাথে সাথে ৩ডি ইমেজ ঘোরানো, SVG লাইন আঁকা বা ডাইনামিক ভিজ্যুয়াল ইফেক্ট যুক্ত করতে গিয়ে কি বাড়তি কোডিংয়ের ঝামেলায় পড়ছেন? বড় ব্র্যান্ডের প্রোডাক্ট লঞ্চ পেজে দেখা যায়, স্ক্রল করলে ওয়্যারলেস ইয়ারবাড ৩৬০ ডিগ্রি ফ্রেম ধরে ঘুরছে, স্ক্রিন জুড়ে উজ্জ্বল SVG সার্কিট লাইন আঁকা হচ্ছে কিংবা স্ক্রলের গভীরতা অনুযায়ী CSS ব্লার, শ্যাডো […]",
+    "published_at": "2026-11-28T09:24:56",
+    "modified_at": "2026-11-28T09:24:56",
+    "original_url": "https://www.shamokaldarpon.com/6536/royalmagicscroll-extension-elementor",
+    "author": "মেহেদী আকরাম",
+    "categories": [
+      "ওয়েব ডিজাইন এবং ডেভেলপমেন্ট",
+      "ওয়ার্ডপ্রেস"
+    ],
+    "tags": [
+      "Draw SVG",
+      "Images Sequence",
+      "Magic Scroll Elementor Pro",
+      "Royal Addons",
+      "স্ক্রল অ্যানিমেশন"
+    ],
+    "featured_image": "media/shamokaldarpon/featured-royal-magicscroll.jpg",
+    "markdown_path": "articles/shamokaldarpon/bangla/2026/royalmagicscroll-extension-elementor.md",
+    "content_hash": "7864a720922b6000ebf1772996eb2433d2f0b117f085434b48ad23baabe38121"
+  },
+  {
     "archive_id": "shamokaldarpon-6534",
     "source": "shamokaldarpon",
     "source_name": "সমকাল দর্পণ",
@@ -116,9 +171,9 @@
     "title": "Royal Addons for Elementor",
     "slug": "royal-addons-for-elementor",
     "language": "en",
-    "excerpt": "✦ Royal Addons for Elementor ✦ The Ultimate Elementor Addon193+ Widgets & Extensions Supercharge your Elementor builds with 131 free widgets, 36 Pro widgets, and 22 free extensions. Lightweight, gorgeous, and built for real-world sites. Free Widgets 0 + Pro Widgets 0 + Free Extensions 0 Total Elements 0 + 180 + ★ Core Capabilities […]",
+    "excerpt": "✦ Royal Addons for Elementor ✦ The Ultimate Elementor Addon193+ Widgets & Extensions Supercharge your Elementor builds with 131 free widgets, 36 Pro widgets, and 22 free extensions. Lightweight, gorgeous, and built for real-world sites. Free Widgets 0 + Pro Widgets 0 + Free Extensions 0 Total Elements 0 + 180 + Core Capabilities Royal […]",
     "published_at": "2026-11-25T23:23:51",
-    "modified_at": "2026-11-26T09:32:48",
+    "modified_at": "2026-11-27T17:27:57",
     "original_url": "https://www.royaltechbd.com/royal-addons-for-elementor/",
     "author": "S M Mehdi Akram",
     "categories": [
@@ -128,7 +183,7 @@
     "tags": [],
     "featured_image": "media/royaltechbd/Royal-Addons-for-Elementor.png",
     "markdown_path": "articles/royaltechbd/english/2026/royal-addons-for-elementor.md",
-    "content_hash": "cc599b16f7627d0de25fc684a25a4d01def0ff2be3b119793fedd458c39a9336"
+    "content_hash": "212d69fcc13e79f39c3c803b644dfe8fad85d9e0af93fff23e4b80aa0c37ce6f"
   },
   {
     "archive_id": "royaltechbd-4600",
